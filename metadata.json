@@ -1,0 +1,6 @@
+{
+  "name": "PIRAMID ENERGY GOVERNANCE",
+  "description": "Sistema de Gestão de Qualidade para Engenharia de Óleo e Gás, com checklists de inspeção, geração de databooks, dashboard interativo e assinaturas com certificação digital.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

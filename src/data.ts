@@ -1,0 +1,482 @@
+import { ChecklistStatus, ChecklistItem, Project, CrmContact, CrmActivity } from './types';
+
+export const CHANNELS_LANG = {
+  PT: {
+    // Auth & Navigation
+    title: 'PIRAMID ENERGY GOVERNANCE',
+    subtitle: 'Gestão de Qualidade em Óleo & Gás',
+    login: 'Acessar Sistema',
+    loginMfa: 'Autenticação de Acesso',
+    companyCode: 'Código da Empresa',
+    companyPass: 'Senha',
+    adminLabel: 'Administração Geral (Senha Mestra)',
+    adminOption: 'Entrar como Administrador Geral',
+    registerBtn: 'Cadastrar Nova Empresa',
+    logout: 'Sair',
+    switchLang: 'Alterar Idioma',
+    dashboard: 'Dashboard',
+    projects: 'Projetos',
+    checklist: 'Lista de Verificação (Checklist)',
+    crm: 'CRM & Contatos',
+    powerBi: 'Integração Power BI',
+    databook: 'Gerador Databook',
+    saasHub: 'Estratégia & Cartilha B2B',
+    clientHub: 'Manual & Segurança Legal',
+    
+    // Statuses
+    pending: 'Pendente',
+    analysis: 'Em Análise',
+    rejected: 'Reprovado',
+    notApplicable: 'Não Aplicável',
+    approved: 'Aprovado',
+    
+    // Checklist/Project headers
+    newProject: 'Novo Projeto',
+    projectList: 'Fichas de Projetos',
+    category: 'Categoria',
+    client: 'Cliente',
+    contract: 'Contrato',
+    techResponsible: 'Responsável Técnico',
+    docNumber: 'Nº do Documento',
+    area: 'Área',
+    titleLabel: 'Título do Projeto',
+    orderNumber: 'Ordem de Serviço (OS)',
+    revision: 'Revisão',
+    actions: 'Ações',
+    details: 'Ver Detalhes/Checklist',
+    createProjectBtn: 'Registrar Projeto',
+    cancel: 'Cancelar',
+    
+    // Upload & Signatures
+    uploadDoc: 'Enviar Documento / Relatório',
+    fileName: 'Nome do Arquivo',
+    revisionLabel: 'Revisão',
+    date: 'Data',
+    by: 'Por',
+    status: 'Status do Item',
+    signatureValidation: 'Controle de Assinatura Digital',
+    signDocument: 'Validar com Certificado Digital (ICP)',
+    certifiedBy: 'Assinado Digitalmente por',
+    notSigned: 'Aguardando validação de assinatura',
+    signSuccess: 'Certificação Digital Validada com sucesso (Assinatura Criptográfica Integrada)',
+    inspector: 'Inspetor / Responsável',
+    crea: 'Registro Profissional (CREA/CFT)',
+    nationalId: 'CPF',
+    certificateAuthority: 'Autoridade Emissora',
+    newEmission: 'Nova Emissão de Relatório',
+    emissionsList: 'Emissões Salvas',
+    
+    // Dashboard & CRM & Power BI
+    kpiProgress: 'Progresso da Inspeção',
+    kpiApproved: 'Documentos Aprovados',
+    kpiPending: 'Pendentes / Análise',
+    kpiRejected: 'Reprovados',
+    powerBiView: 'Análise Avançada Integrada do Power BI',
+    powerBiSub: 'Visão consolidade em tempo real dos indicadores operacionais',
+    powerBiLive: 'MODO AO VIVO',
+    crmTitle: 'CRM - Painel de Relacionamento e Contatos',
+    crmAddContact: 'Adicionar Contato',
+    crmAddContactBtn: 'Adicionar Contato',
+    crmName: 'Nome do Contato',
+    crmRole: 'Função/Cargo',
+    crmPhone: 'Telefone',
+    crmEmail: 'E-mail',
+    crmStatus: 'Status de Relacionamento',
+    crmLogs: 'Histórico de Interações CRM',
+    crmLogPlaceholder: 'Adicionar nota de atendimento...',
+    addLog: 'Registrar Nota',
+    
+    // Databook
+    databookTitle: 'Emissão de Databook Técnico',
+    databookDesc: 'Gere o arquivo final consolidado de garantia da qualidade com paginação automática e controle de emissão.',
+    generateBtn: 'Gerar e Visualizar Databook',
+    printBtn: 'Imprimir / Salvar como PDF',
+    closePreview: 'Fechar Pré-visualização',
+    compiledReports: 'Relatórios Compilados',
+    tocTitle: 'SUMÁRIO GERAL / INDICE',
+    signaturePage: 'FOLHA DE ASSINATURAS',
+    pageOf: 'Página {num} de {total}',
+  },
+  EN: {
+    // Auth & Navigation
+    title: 'PIRAMID ENERGY GOVERNANCE',
+    subtitle: 'Quality Management in Oil & Gas',
+    login: 'Access System',
+    loginMfa: 'Access Authentication',
+    companyCode: 'Company Code',
+    companyPass: 'Password',
+    adminLabel: 'General Administration (Master Key)',
+    adminOption: 'Log in as General Administrator',
+    registerBtn: 'Register New Company',
+    logout: 'Sign Out',
+    switchLang: 'Change Language',
+    dashboard: 'Dashboard',
+    projects: 'Projects',
+    checklist: 'Checklist',
+    crm: 'CRM & Contacts',
+    powerBi: 'Power BI Integration',
+    databook: 'Databook Builder',
+    saasHub: 'B2B Strategy & Guide',
+    clientHub: 'Manual & Legal Protection',
+    
+    // Statuses
+    pending: 'Pending',
+    analysis: 'Under Analysis',
+    rejected: 'Rejected',
+    notApplicable: 'Not Applicable',
+    approved: 'Approved',
+    
+    // Checklist/Project headers
+    newProject: 'New Project',
+    projectList: 'Project Records',
+    category: 'Category',
+    client: 'Client',
+    contract: 'Contract',
+    techResponsible: 'Technical Manager',
+    docNumber: 'Document No.',
+    area: 'Area',
+    titleLabel: 'Project Title',
+    orderNumber: 'Work Order (WO)',
+    revision: 'Revision',
+    actions: 'Actions',
+    details: 'View Checklist / Details',
+    createProjectBtn: 'Register Project',
+    cancel: 'Cancel',
+    
+    // Upload & Signatures
+    uploadDoc: 'Upload Document / Report',
+    fileName: 'File Name',
+    revisionLabel: 'Revision',
+    date: 'Date',
+    by: 'By',
+    status: 'Item Status',
+    signatureValidation: 'Digital Signature Validation',
+    signDocument: 'Sign with Digital Certificate (ICP)',
+    certifiedBy: 'Digitally Signed by',
+    notSigned: 'Awaiting signature validation',
+    signSuccess: 'Digital Certification validated successfully (Cryptographic Signature Integrated)',
+    inspector: 'Inspector / Owner',
+    crea: 'Professional Reg (CREA/CFT)',
+    nationalId: 'ID Number',
+    certificateAuthority: 'Issuing Trust',
+    newEmission: 'New Report Issue',
+    emissionsList: 'Saved Implementations',
+    
+    // Dashboard & CRM & Power BI
+    kpiProgress: 'Inspection Progress',
+    kpiApproved: 'Approved Docs',
+    kpiPending: 'Pending / Analysis',
+    kpiRejected: 'Rejected',
+    powerBiView: 'Power BI Integrated Advanced Analytics',
+    powerBiSub: 'Real-time consolidated view of operational indicators',
+    powerBiLive: 'LIVE STREAM',
+    crmTitle: 'CRM - Customer Relationship Board',
+    crmAddContact: 'Add Contact',
+    crmAddContactBtn: 'Add Contact',
+    crmName: 'Contact Name',
+    crmRole: 'Role/Position',
+    crmPhone: 'Phone',
+    crmEmail: 'Email',
+    crmStatus: 'Relationship Status',
+    crmLogs: 'CRM Interaction History',
+    crmLogPlaceholder: 'Add communication note...',
+    addLog: 'Record Note',
+    
+    // Databook
+    databookTitle: 'Technical Databook Issuance',
+    databookDesc: 'Generate the final quality assurance consolidated file with automatic pagination and output logs.',
+    generateBtn: 'Generate & Preview Databook',
+    printBtn: 'Print / Save as PDF',
+    closePreview: 'Close Preview',
+    compiledReports: 'Compiled Reports',
+    tocTitle: 'GENERAL INDEX / TABLE OF CONTENTS',
+    signaturePage: 'SIGNATURE APPROVAL PAGE',
+    pageOf: 'Page {num} of {total}',
+  },
+  ES: {
+    // Auth & Navigation
+    title: 'PIRAMID ENERGY GOVERNANCE',
+    subtitle: 'Gestión de Calidad en Petróleo y Gas',
+    login: 'Acceder al Sistema',
+    loginMfa: 'Autenticación de Acceso',
+    companyCode: 'Código de Empresa',
+    companyPass: 'Contraseña',
+    adminLabel: 'Administración General (Clave Maestra)',
+    adminOption: 'Entrar como Administrador General',
+    registerBtn: 'Registrar Nueva Empresa',
+    logout: 'Salir',
+    switchLang: 'Cambiar Idioma',
+    dashboard: 'Dashboard',
+    projects: 'Proyectos',
+    checklist: 'Lista de Verificación',
+    crm: 'CRM y Contactos',
+    powerBi: 'Integración Power BI',
+    databook: 'Generador Databook',
+    saasHub: 'Estrategia y Guía B2B',
+    clientHub: 'Manual y Protección Legal',
+    
+    // Statuses
+    pending: 'Pendiente',
+    analysis: 'En Análisis',
+    rejected: 'Rechazado',
+    notApplicable: 'No Aplica',
+    approved: 'Aprobado',
+    
+    // Checklist/Project headers
+    newProject: 'Nuevo Proyecto',
+    projectList: 'Fichas de Proyectos',
+    category: 'Categoría',
+    client: 'Cliente',
+    contract: 'Contrato',
+    techResponsible: 'Responsable Técnico',
+    docNumber: 'Nº Documento',
+    area: 'Área',
+    titleLabel: 'Título del Proyecto',
+    orderNumber: 'Orden de Servicio (OS)',
+    revision: 'Revisión',
+    actions: 'Acciones',
+    details: 'Ver Detalles/Checklist',
+    createProjectBtn: 'Registrar Proyecto',
+    cancel: 'Cancelar',
+    
+    // Upload & Signatures
+    uploadDoc: 'Enviar Documento / Reporte',
+    fileName: 'Nombre de Archivo',
+    revisionLabel: 'Revisión',
+    date: 'Fecha',
+    by: 'Por',
+    status: 'Estado del Item',
+    signatureValidation: 'Control de Firma Digital',
+    signDocument: 'Validar con Certificado Digital',
+    certifiedBy: 'Firmado Digitalmente por',
+    notSigned: 'Esperando validación de firma',
+    signSuccess: 'Certificación Digital Validada de forma exitosa (Firma Criptográfica Integrativa)',
+    inspector: 'Inspector / Responsable',
+    crea: 'Registro Profesional (CREA/CFT)',
+    nationalId: 'ID/DNI',
+    certificateAuthority: 'Autoridad Certificadora',
+    newEmission: 'Nueva Emisión de Reporte',
+    emissionsList: 'Emisiones Guardadas',
+    
+    // Dashboard & CRM & Power BI
+    kpiProgress: 'Progreso de Inspección',
+    kpiApproved: 'Documentos Aprobados',
+    kpiPending: 'Pendientes / Análisis',
+    kpiRejected: 'Rechazados',
+    powerBiView: 'Análisis Avanzado Integrado de Power BI',
+    powerBiSub: 'Visualización consolidada en tiempo real de indicadores operativos',
+    powerBiLive: 'MODO EN VIVIO',
+    crmTitle: 'CRM - Panel de Relaciones y Contactos',
+    crmAddContact: 'Añadir Contacto',
+    crmAddContactBtn: 'Añadir Contacto',
+    crmName: 'Nombre del Contacto',
+    crmRole: 'Función/Cargo',
+    crmPhone: 'Teléfono',
+    crmEmail: 'E-mail',
+    crmStatus: 'Estado de la Relación',
+    crmLogs: 'Historial de Interacciones CRM',
+    crmLogPlaceholder: 'Añadir nota de atención...',
+    addLog: 'Registrar Nota',
+    
+    // Databook
+    databookTitle: 'Emisión de Databook Técnico',
+    databookDesc: 'Genere el archivo final consolidado de garantía de calidad con paginación automática y control de emisión.',
+    generateBtn: 'Generar y Visualizar Databook',
+    printBtn: 'Imprimir / Guardar como PDF',
+    closePreview: 'Cerrar Vista Previa',
+    compiledReports: 'Reportes Compilados',
+    tocTitle: 'SUMARIO GENERAL / ÍNDICE',
+    signaturePage: 'HOJA DE FIRMAS',
+    pageOf: 'Página {num} de {total}',
+  }
+};
+
+/**
+ * Complete set of preloaded Checklist items fetched directly from the PDF screenshots.
+ * Divided into sections for clean workspace experience.
+ */
+export const INITIAL_CHECKLIST_RAW = [
+  // 1- CAPA (Category: CAPA)
+  { code: 'CAPA-01', titlePt: 'Índice', titleEn: 'Index/Contents', titleEs: 'Índice', category: 'CAPA' },
+  { code: 'CAPA-02', titlePt: 'Revisão', titleEn: 'Revision History', titleEs: 'Histórico de Revisiones', category: 'CAPA' },
+  { code: 'CAPA-03', titlePt: 'Emissão', titleEn: 'Issuance Logs', titleEs: 'Registros de Emisión', category: 'CAPA' },
+
+  // 2- CONTRA CAPA (Category: CONTRA_CAPA)
+  { code: 'CCAP-01', titlePt: 'Categoria', titleEn: 'Project Category', titleEs: 'Categoría de Proyecto', category: 'CONTRA_CAPA' },
+  { code: 'CCAP-02', titlePt: 'Nº. do Documento', titleEn: 'Document Registration Number', titleEs: 'Número del Documento', category: 'CONTRA_CAPA' },
+  { code: 'CCAP-03', titlePt: 'Cliente', titleEn: 'Client Name', titleEs: 'Nombre del Cliente', category: 'CONTRA_CAPA' },
+  { code: 'CCAP-04', titlePt: 'Projeto', titleEn: 'Project Name', titleEs: 'Nombre del Proyecto', category: 'CONTRA_CAPA' },
+  { code: 'CCAP-05', titlePt: 'Área', titleEn: 'Operational Area/Unit', titleEs: 'Área/Unidad Operativa', category: 'CONTRA_CAPA' },
+  { code: 'CCAP-06', titlePt: 'Título', titleEn: 'Document Title', titleEs: 'Título del Documento', category: 'CONTRA_CAPA' },
+  { code: 'CCAP-07', titlePt: 'Nº. da Ordem de Serviço', titleEn: 'Service Work Order ID', titleEs: 'Nº de Orden de Servico', category: 'CONTRA_CAPA' },
+  { code: 'CCAP-08', titlePt: 'Nº. Contrato', titleEn: 'Contract Reference Number', titleEs: 'Número de Contrato', category: 'CONTRA_CAPA' },
+  { code: 'CCAP-09', titlePt: 'Responsável Técnico', titleEn: 'Technical Supervisor Enlisted', titleEs: 'Responsable Técnico Habilitado', category: 'CONTRA_CAPA' },
+
+  // 3- SUMÁRIO (Category: SUMARIO)
+  { code: 'SUMA-01', titlePt: 'Apresentação', titleEn: 'Apresentation Intro', titleEs: 'Presentación Inicial', category: 'SUMARIO' },
+  { code: 'SUMA-02', titlePt: 'Informações Gerais', titleEn: 'General System Information', titleEs: 'Información General', category: 'SUMARIO' },
+  { code: 'SUMA-03', titlePt: 'Certificado de Conclusão ou Conformidade', titleEn: 'Completion & Conformity Certificate', titleEs: 'Certificado de Conclusión o Conformidad', category: 'SUMARIO' },
+  { code: 'SUMA-04', titlePt: 'Certificado ISO 9001', titleEn: 'ISO 9001 Qualification Seal', titleEs: 'Certificación de Calidad ISO 9001', category: 'SUMARIO' },
+  { code: 'SUMA-05', titlePt: 'Selo ASME', titleEn: 'ASME Nuclear/Pressure Certification Stamp', titleEs: 'Sello de Homologación ASME', category: 'SUMARIO' },
+  { code: 'SUMA-06', titlePt: 'Selo API', titleEn: 'API Field Certification Stamp', titleEs: 'Sello de Calidad API', category: 'SUMARIO' },
+  { code: 'SUMA-07', titlePt: 'Certificado do OIA', titleEn: 'Independent Inspection Agency (OIA) Cert', titleEs: 'Certificado de la OIA', category: 'SUMARIO' },
+  { code: 'SUMA-08', titlePt: 'Contrato de Prestação de Serviços do OIA', titleEn: 'OIA Independent Service Contract', titleEs: 'Contrato de Prestación de Servicios OIA', category: 'SUMARIO' },
+  { code: 'SUMA-09', titlePt: 'Certificados dos Inspetores Representantes do OIA', titleEn: 'OIA Inspectors Competency Sign-off', titleEs: 'Certificados de Inspectores Genuinos OIA', category: 'SUMARIO' },
+  { code: 'SUMA-10', titlePt: 'RAD - Relatório de Análise Documental', titleEn: 'RAD - Document Analysis Audit Report', titleEs: 'RAD - Reporte de Análisis Documental', category: 'SUMARIO' },
+  { code: 'SUMA-11', titlePt: 'PIT - Plano de Inspeção e Testes', titleEn: 'PIT - Inspection and Test Roadmaps', titleEs: 'PIT - Plan de Inspección y Ensayos', category: 'SUMARIO' },
+  { code: 'SUMA-12', titlePt: 'CLM - Comunicação de Liberação de Material', titleEn: 'CLM - Material Delivery Release Cleared', titleEs: 'CLM - Liberación Formal de Materiales', category: 'SUMARIO' },
+  { code: 'SUMA-13', titlePt: 'ATA de PIM', titleEn: 'PIM Meeting Memorandums (Pre-Inspection)', titleEs: 'Acta de Reunión Previa (PIM)', category: 'SUMARIO' },
+  { code: 'SUMA-14', titlePt: 'Comunicação de Inspeção (CSE)', titleEn: 'Inspection Advisory Broadcast (CSE)', titleEs: 'Comunicación sobre Inspección (CSE)', category: 'SUMARIO' },
+  { code: 'SUMA-15', titlePt: 'Desenhos', titleEn: 'Engineering Blueprint Sketches & Schematics', titleEs: 'Planos y Diseños de Ingeniería', category: 'SUMARIO' },
+  { code: 'SUMA-16', titlePt: 'Spools', titleEn: 'Piping Segment Layout (Spools)', titleEs: 'Planos Isometricos de Spools', category: 'SUMARIO' },
+  { code: 'SUMA-17', titlePt: 'Lista de Procedimentos', titleEn: 'Standard Procedure Logs', titleEs: 'Lista de Procedimientos Estándar', category: 'SUMARIO' },
+  { code: 'SUMA-18', titlePt: 'Lista de Instrumentos', titleEn: 'Instrument Calibrations Ledger', titleEs: 'Lista de Instrumentos de Campo', category: 'SUMARIO' },
+  { code: 'SUMA-19', titlePt: 'Lista de Inspetores Qualificados do Projeto', titleEn: 'Enlisted Certified Inspectors Roster', titleEs: 'Róster de Inspectores Cualificados', category: 'SUMARIO' },
+  { code: 'SUMA-20', titlePt: 'Certificado dos Inspetores Qualificados do Projeto', titleEn: 'Inspectors Qualification Badges', titleEs: 'Certificados de Aptitud para Inspectores', category: 'SUMARIO' },
+  { code: 'SUMA-21', titlePt: 'IEIS / EPS / RQPS', titleEn: 'IEIS / EPS / RQPS Formulations', titleEs: 'Normas IEIS / EPS / RQPS', category: 'SUMARIO' },
+  { code: 'SUMA-22', titlePt: 'Certificado de Soldadores Qualificados', titleEn: 'Welder Certifications & Qualifications', titleEs: 'Certificado de Soldadores Cualificados', category: 'SUMARIO' },
+  { code: 'SUMA-23', titlePt: 'Controle de Desempenho de Soldadores Qualificados', titleEn: 'Welders Performance Evaluation Curve', titleEs: 'Control de Desempeño sobre Soldadores', category: 'SUMARIO' },
+  { code: 'SUMA-24', titlePt: 'Registro da Calibração das Máquinas de Soldas', titleEn: 'Welding Machines Calibration Registries', titleEs: 'Calibración de Equipos de Soldeo', category: 'SUMARIO' },
+  { code: 'SUMA-25', titlePt: 'Relatório de Inspeção de Recebimento de Materiais', titleEn: 'Material Reception Inspection Approval', titleEs: 'Inspección de Recepción de Materiales', category: 'SUMARIO' },
+  { code: 'SUMA-26', titlePt: 'Relatório de Inspeção Dimensional', titleEn: 'Dimensional Precision Metrology Log', titleEs: 'Reporte de Inspección Dimensional', category: 'SUMARIO' },
+  { code: 'SUMA-27', titlePt: 'Relatório de Inspeção de Solda', titleEn: 'Piping Weld Segment Audit', titleEs: 'Reporte de Inspección Estructural de Soldadura', category: 'SUMARIO' },
+  { code: 'SUMA-28', titlePt: 'Relatório de Inspeção Visual de Solda', titleEn: 'Visual Weld Defects Analysis', titleEs: 'Inspección Visual de Soldadura', category: 'SUMARIO' },
+  { code: 'SUMA-29', titlePt: 'Relatório Mapeamento de Soldas', titleEn: 'Weld Mapping Layout Spreadsheet', titleEs: 'Reporte de Mapeo Técnico de Soldaduras', category: 'SUMARIO' },
+  { code: 'SUMA-30', titlePt: 'Relatório de Inspeção de Líquido Penetrante', titleEn: 'Dye Penetrant Testing (PT) Audit', titleEs: 'Prueba de Líquidos Penetrantes', category: 'SUMARIO' },
+  { code: 'SUMA-31', titlePt: 'Relatório de Inspeção por Partícula Magnética', titleEn: 'Magnetic Particle Inspection (MT) report', titleEs: 'Inspección por Partículas Magnéticas', category: 'SUMARIO' },
+  { code: 'SUMA-32', titlePt: 'Relatório de Inspeção por PMI', titleEn: 'Positive Material Identification (PMI) report', titleEs: 'Inspección Química Cuantitativa (PMI)', category: 'SUMARIO' },
+  { code: 'SUMA-33', titlePt: 'Relatório de Inspeção por Ultrassom', titleEn: 'Ultrasonic Non-Destructive Weld Scan (UT)', titleEs: 'Inspección por Ultrasonido (UT)', category: 'SUMARIO' },
+  { code: 'SUMA-34', titlePt: 'Relatório de Inspeção Radiográfica', titleEn: 'Gamma/X-Ray Volumetric Weld Review (RT)', titleEs: 'Reporte de Inspección Radiográfica (RT)', category: 'SUMARIO' },
+  { code: 'SUMA-35', titlePt: 'Relatório de Inspeção de Retirada de Corpo de Prova', titleEn: 'Specimen Sampling Extraction Register', titleEs: 'Extracción de Probeta Mecánica', category: 'SUMARIO' },
+  { code: 'SUMA-36', titlePt: 'Relatório de Inspeção por Dobramento', titleEn: 'Bending Test Physical Destructive Log', titleEs: 'Reporte de Ensayo de Doblado', category: 'SUMARIO' },
+  { code: 'SUMA-37', titlePt: 'Relatório de Inspeção por Tratamento Térmico', titleEn: 'Post-Weld Heat Treatment (PWHT) Chart', titleEs: 'Tratamiento Térmico Pos-Soldadura', category: 'SUMARIO' },
+  { code: 'SUMA-38', titlePt: 'Relatório de Dureza', titleEn: 'Hardness testing Brinell/Vickers Record', titleEs: 'Ensayo Físico de Dureza Metálica', category: 'SUMARIO' },
+  { code: 'SUMA-39', titlePt: 'Relatório de Inspeção por Macrografia/Micrografia', titleEn: 'Macro/Microstructural Section Analysis', titleEs: 'Análisis Macrografía/Micrografía', category: 'SUMARIO' },
+  { code: 'SUMA-40', titlePt: 'Relatório de Inspeção por Tração/Dobramento', titleEn: 'Tensile & Bending Dual Property test', titleEs: 'Ensayo Conjunto de Tracción/Doblado', category: 'SUMARIO' },
+  { code: 'SUMA-41', titlePt: 'Relatório de Montagem do Sistema de Tubulação', titleEn: 'Piping System Assembly Registry', titleEs: 'Ensamble de Tuberías del Sistema', category: 'SUMARIO' },
+  { code: 'SUMA-42', titlePt: 'Relatório de Inspeção de Montagem do Sistema de Tubulação', titleEn: 'Piping Setup QC Inspection Form', titleEs: 'Inspección de Ensamble de Tubería', category: 'SUMARIO' },
+  { code: 'SUMA-43', titlePt: 'Relatório de Montagem dos Suportes do Sistema de Tubulação', titleEn: 'Pipe Supports Structural Assembly Log', titleEs: 'Ensamble de Soportes de Tubería', category: 'SUMARIO' },
+  { code: 'SUMA-44', titlePt: 'Relatório de Inspeção de Montagem dos Suportes de Tubulação', titleEn: 'Pipe Supports Mechanical Inspection', titleEs: 'Inspección de Soportes de Tubería', category: 'SUMARIO' },
+  { code: 'SUMA-45', titlePt: 'Relatório de Montagem de Estruturas Metálicas', titleEn: 'Structural Steel Frame Installation Log', titleEs: 'Estructuras Metálicas Armado', category: 'SUMARIO' },
+  { code: 'SUMA-46', titlePt: 'Relatório de Inspeção de Montagem de Estruturas Metálicas', titleEn: 'Steel Frame Quality Compliance Release', titleEs: 'Inspección de Estructuras Metálicas', category: 'SUMARIO' },
+  { code: 'SUMA-47', titlePt: 'Relatório de Inspeção de Testes de Válvulas', titleEn: 'Valve Seat Testing & Leak Assessment', titleEs: 'Ensayos de Válvulas y Estanqueidad', category: 'SUMARIO' },
+  { code: 'SUMA-48', titlePt: 'Relatório de Inspeção Ensaio de Estanqueidade', titleEn: 'Structure Tightness Inspection (Leak check)', titleEs: 'Reporte de Ensayo de Estanqueidad', category: 'SUMARIO' },
+  { code: 'SUMA-49', titlePt: 'Relatório de Inspeção Teste Hidrostático', titleEn: 'System Pressure Hydrostatic Test Log (HT)', titleEs: 'Reporte de Prueba Hidrostática', category: 'SUMARIO' },
+  { code: 'SUMA-50', titlePt: 'Mapa de Controle da RNC\'s', titleEn: 'NCR Control Map and Action Register', titleEs: 'Mapa Control de No Conformidades (RNC)', category: 'SUMARIO' },
+  { code: 'SUMA-51', titlePt: 'Relatórios de Não Conformidades', titleEn: 'Individual Non-Conformity File Records', titleEs: 'Listado de Reportes de No Conformidad', category: 'SUMARIO' },
+  { code: 'SUMA-52', titlePt: 'Mapa de Controle de Provedores Externos', titleEn: 'External Supplier Competency Audit Map', titleEs: 'Control de Proveedores Externos', category: 'SUMARIO' },
+  { code: 'SUMA-53', titlePt: 'Relatório de Inspeção Teste Hidropneumático', titleEn: 'Dual Hydro-pneumatic Safety Test Clear', titleEs: 'Reporte de Prueba Hidroneumática', category: 'SUMARIO' },
+  { code: 'SUMA-54', titlePt: 'Relatório de Inspeção por Mandrilhagem', titleEn: 'Expanding Tube Roller Expansion (Mandrel)', titleEs: 'Inspección por Expandido de Tubos', category: 'SUMARIO' },
+  { code: 'SUMA-55', titlePt: 'Relatório Mapeamento de Mandrilhagem', titleEn: 'Mandrel Swaging Location Mapping Chart', titleEs: 'Mapeo de Expandido de Tubos', category: 'SUMARIO' },
+  { code: 'SUMA-56', titlePt: 'Relatório de Inspeção Topográfica', titleEn: 'Geodetical & Topoghraphical Site Release', titleEs: 'Reporte de Campo Topográfico', category: 'SUMARIO' },
+  { code: 'SUMA-57', titlePt: 'Relatório de Inspeção de Base Civil', titleEn: 'Concrete & Civil Foundation QC Approval', titleEs: 'Inspección de Obras de Base Civil', category: 'SUMARIO' },
+  { code: 'SUMA-58', titlePt: 'Relatório de Inspeção e Liberação de Assentamento de Calços', titleEn: 'Grout Shimming & Bedding Verification', titleEs: 'Asiento y Nivelación de Calces', category: 'SUMARIO' },
+  { code: 'SUMA-59', titlePt: 'Relatório de Inspeção de Montagem de Trocadores de Calor', titleEn: 'Heat Exchanger Core Rigging Layout', titleEs: 'Montaje de Intercambiador de Calor', category: 'SUMARIO' },
+  { code: 'SUMA-60', titlePt: 'Relatório de Inspeção de Montagem de Bombas e Ventiladores', titleEn: 'Pumps & Blowers Rotating Equipment Log', titleEs: 'Montaje de Bombas e Sopladores', category: 'SUMARIO' },
+  { code: 'SUMA-61', titlePt: 'Relatório de Inspeção de Montagem Vasos e Torres', titleEn: 'Pressure Vessel Rigging & Anchor Verification', titleEs: 'Montaje de Vasijas de Presión y Torres', category: 'SUMARIO' },
+  { code: 'SUMA-62', titlePt: 'Relatório de Inspeção de Montagem de Escadas e Plataformas', titleEn: 'Ladders & Walkway Structural Inspection', titleEs: 'Montaje de Escaleras y Plataformas', category: 'SUMARIO' },
+  { code: 'SUMA-63', titlePt: 'Relatório de Inspeção de Montagem de Bandejas e Internos de Vasos e Torres', titleEn: 'Vessel Trays & Bubble Caps Core Clearance', titleEs: 'Bandejas e Internos de Torres', category: 'SUMARIO' },
+  { code: 'SUMA-64', titlePt: 'Relatório de Inspeção de Montagem de Tubulação de Rede Elétrica', titleEn: 'Electrical Conduit Path Rigging Layout', titleEs: 'Montaje Canales Conduit Eléctricos', category: 'SUMARIO' },
+  { code: 'SUMA-65', titlePt: 'Relatório de Inspeção da Malha Elétrica', titleEn: 'Electrical Loop Continuity & Safety tests', titleEs: 'Reporte de Pruebas de Red Eléctrica', category: 'SUMARIO' },
+  { code: 'SUMA-66', titlePt: 'Relatório de Inspeção de Equipamentos e Rede Elétrica', titleEn: 'Electrical Machinery Insulation Testing', titleEs: 'Inspección de Equipos Eléctricos', category: 'SUMARIO' },
+  { code: 'SUMA-67', titlePt: 'Relatório de Inspeção da Malha de Instrumentação', titleEn: 'Instrumentation Signal Feedback loop (mA)', titleEs: 'Reporte Lazo de Instrumentación', category: 'SUMARIO' },
+  { code: 'SUMA-68', titlePt: 'Relatório de inspeção de Montagem do Sistema de Instrumentação', titleEn: 'Instrument Racks Setup Control', titleEs: 'Montaje del Sistema Instrumentación', category: 'SUMARIO' },
+  { code: 'SUMA-69', titlePt: 'Relatório de Inspeção de Equipamentos de Instrumentação', titleEn: 'Field Sensors & Transmitters QC release', titleEs: 'Inspección de Instrumentos Unitarios', category: 'SUMARIO' },
+  { code: 'SUMA-70', titlePt: 'Relatório de Inspeção Fotográfica', titleEn: 'Visual Photographic Database Compilation', titleEs: 'Dossier de Reporte de Fotos', category: 'SUMARIO' },
+  { code: 'SUMA-71', titlePt: 'Certificado Digital', titleEn: 'Electronic Vault Digital Seal Clearance', titleEs: 'Certificado de Cierre Digital', category: 'SUMARIO' }
+];
+
+export const INITIAL_COMPANIES = [
+  { id: 'master', name: 'PIRAMID Admin', email: 'admin@piramidy.com', isRegistered: true },
+  { id: 'cliente-demo', name: 'Cliente Demonstração S.A.', email: 'qualidade@clientedemo.com.br', isRegistered: true }
+];
+
+export const PASSWORDS_MAPPING: Record<string, string> = {
+  'master': 'master2026',
+  'cliente-demo': 'demo123'
+};
+
+export const INITIAL_CONTACTS: CrmContact[] = [
+  { id: 'c1', name: 'Carlos Santos', role: 'Engenheiro de Inspeção Geral', company: 'Cliente Demonstração S.A.', phone: '+55 21 99999-8888', email: 'carlos.santos@clientedemo.com.br', status: 'active' },
+  { id: 'c2', name: 'Mariana Silva', role: 'Coordenadora de Qualidade', company: 'Cliente Demonstração S.A.', phone: '+55 21 98888-7777', email: 'mariana.silva@clientedemo.com.br', status: 'active' },
+  { id: 'c3', name: 'Roberto Santos de Araujo', role: 'Gerente Técnico Superior', company: 'PIRAMID ENERGY GOVERNANCE', phone: '+55 11 96112-9900', email: 'roberto.santos@piramidy.com', status: 'active' }
+];
+
+export const INITIAL_CRM_ACTIVITIES: CrmActivity[] = [
+  { id: 'act-1', date: '2026-07-01T10:00:00Z', type: 'meeting', title: 'Reunião de Alinhamento PIT', description: 'Reunião realizada com Carlos (Cliente Demonstração S.A.) para revisão dos parâmetros do Plano de Inspeção e Testes (PIT). Tudo aprovado.', user: 'PIRAMID Admin' },
+  { id: 'act-2', date: '2026-07-02T14:30:00Z', type: 'email', title: 'Envio de Máscara de Relatórios', description: 'Enviado o e-mail contendo as máscaras oficiais de Inspeção de Líquido Penetrante para a equipe do cliente.', user: 'PIRAMID Admin' }
+];
+
+export const INITIAL_PROJECTS: Project[] = [
+  {
+    id: 'proj-demo-001',
+    name: 'Projeto de Inspeção Geral - Planta Piloto',
+    category: 'Inspeção e Qualidade',
+    client: 'Cliente Demonstração S.A.',
+    contract: 'CTR-DEMO-2026',
+    techResponsible: 'Carlos Santos (CREA RJ 999999)',
+    docNumber: 'DEMO-REP-QMS-001',
+    area: 'Área 01 - Vasos de Pressão e Tubulações de Gás',
+    title: 'Garantia de Qualidade e Rastreabilidade Criptográfica',
+    orderNumber: 'OS-202601',
+    revision: 'Rev. 0',
+    createdAt: '2026-07-01T08:00:00Z',
+    checklist: INITIAL_CHECKLIST_RAW.map((item, i) => {
+      let status = ChecklistStatus.PENDING;
+      let emissions: any[] = [];
+
+      if (i < 12) {
+        status = ChecklistStatus.APPROVED;
+        emissions = [{
+          id: `em-${item.code}-1`,
+          revision: 'Rev. 0',
+          fileName: `${item.code}_relatorio_concluido.pdf`,
+          fileSize: '4.2 MB',
+          uploadedAt: '2026-07-05T10:00:00Z',
+          status: ChecklistStatus.APPROVED,
+          signature: {
+            inspectorName: 'Carlos Santos',
+            professionalId: 'CREA RJ 999999',
+            nationalId: '***.000.000-**',
+            certificateAuthority: 'ICP-Brasil Piramid CA v1',
+            signedAt: '2026-07-05T10:14:00Z',
+            signatureHash: 'SHA256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+            isValid: true
+          }
+        }];
+      } else if (i < 18) {
+        status = ChecklistStatus.ANALYSIS;
+        emissions = [{
+          id: `em-${item.code}-1`,
+          revision: 'Rev. A',
+          fileName: `${item.code}_rascunho_inspecao.doc`,
+          fileSize: '1.8 MB',
+          uploadedAt: '2026-07-06T11:45:00Z',
+          status: ChecklistStatus.ANALYSIS
+        }];
+      } else if (i === 22 || i === 23) {
+        status = ChecklistStatus.REJECTED;
+        emissions = [
+          {
+            id: `em-${item.code}-1`,
+            revision: 'Rev. 0',
+            fileName: `${item.code}_revisao_necessaria.pdf`,
+            fileSize: '2.5 MB',
+            uploadedAt: '2026-07-04T14:00:00Z',
+            status: ChecklistStatus.REJECTED
+          }
+        ];
+      } else if (i === 35 || i === 36) {
+        status = ChecklistStatus.NOT_APPLICABLE;
+      }
+
+      return {
+        ...item,
+        id: item.code,
+        category: item.category as 'CAPA' | 'CONTRA_CAPA' | 'SUMARIO',
+        status,
+        emissions
+      };
+    })
+  }
+];
