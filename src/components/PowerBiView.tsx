@@ -198,7 +198,7 @@ export default function PowerBiView({
           <div>
             <h2 className="text-[#f2c811] text-sm font-bold uppercase tracking-wider font-mono flex items-center gap-1.5">
               POWER BI EMBEDDED CONNECTOR
-              <span className="text-[9px] bg-red-650 bg-green-500 font-mono text-black px-1.5 py-0.2 rounded font-normal">
+              <span className="text-[9px] bg-orange-650 bg-green-500 font-mono text-black px-1.5 py-0.2 rounded font-normal">
                 {t.powerBiLive}
               </span>
             </h2>
@@ -351,7 +351,7 @@ export default function PowerBiView({
                 <div className="bg-[#1e1e1e] border-l-4 border-[#ef4444] p-4">
                   <span className="text-[10px] text-[#ef4444] uppercase font-bold text-center block">Alertas Críticos / RNC</span>
                   <span className="text-3xl font-extrabold text-[#ef4444] text-center block mt-1">{rejectedTotal}</span>
-                  <p className="text-[9px] text-red-500 mt-1">Inconformidades operacionais</p>
+                  <p className="text-[9px] text-orange-500 mt-1">Inconformidades operacionais</p>
                 </div>
 
               </div>
@@ -490,7 +490,7 @@ export default function PowerBiView({
                       <div 
                         key={idx} 
                         className={`p-2.5 rounded-lg border flex flex-col items-center justify-between font-mono text-center transition ${
-                          isRejected ? 'bg-red-950/20 border-red-500/60 hover:bg-red-950/30 text-red-400' :
+                          isRejected ? 'bg-orange-950/20 border-orange-500/60 hover:bg-orange-950/30 text-orange-400' :
                           isMuted ? 'bg-[#151515] border-[#252526] hover:bg-[#1a1a1b] text-gray-600' :
                           'bg-emerald-950/10 border-emerald-500/50 hover:bg-emerald-950/20 text-emerald-400'
                         }`}
@@ -499,7 +499,7 @@ export default function PowerBiView({
                         <span className="text-[9px] text-gray-500 block">SP-{100 + idx}</span>
                         <span className="text-xs font-black block mt-1">W-{idx + 1}</span>
                         <div className={`w-2.5 h-2.5 rounded-full mt-2 ${
-                          isRejected ? 'bg-red-500 animate-pulse' :
+                          isRejected ? 'bg-orange-500 animate-pulse' :
                           isMuted ? 'bg-gray-700' : 'bg-green-500'
                         }`} />
                       </div>
@@ -631,15 +631,15 @@ export default function PowerBiView({
                     <span className="text-xl font-extrabold text-gray-100 block mt-0.5">{totalIssued}</span>
                     <span className="text-[8px] text-gray-500">Volumétrico Absoluto</span>
                   </div>
-                  <div className="bg-[#1e1e1e] p-3 border-l-4 border-red-500 rounded">
+                  <div className="bg-[#1e1e1e] p-3 border-l-4 border-orange-500 rounded">
                     <span className="text-[9px] text-gray-500 block uppercase font-bold">{R.cardOpen}</span>
-                    <span className="text-xl font-extrabold text-red-400 block mt-0.5">{openCount}</span>
-                    <span className="text-[8px] text-red-500/80">Críticas Sem Solução</span>
+                    <span className="text-xl font-extrabold text-orange-400 block mt-0.5">{openCount}</span>
+                    <span className="text-[8px] text-orange-500/80">Críticas Sem Solução</span>
                   </div>
-                  <div className="bg-[#1e1e1e] p-3 border-l-4 border-red-500 rounded font-mono">
+                  <div className="bg-[#1e1e1e] p-3 border-l-4 border-orange-500 rounded font-mono">
                     <span className="text-[9px] text-gray-500 block uppercase font-bold">{R.cardPlan}</span>
-                    <span className="text-xl font-extrabold text-red-500 block mt-0.5">{planCount}</span>
-                    <span className="text-[8px] text-red-400/80">Mitigação em Curso</span>
+                    <span className="text-xl font-extrabold text-orange-500 block mt-0.5">{planCount}</span>
+                    <span className="text-[8px] text-orange-400/80">Mitigação em Curso</span>
                   </div>
                   <div className="bg-[#1e1e1e] p-3 border-l-4 border-green-500 rounded font-mono">
                     <span className="text-[9px] text-gray-400 block uppercase font-bold">{R.cardClosed}</span>
@@ -671,7 +671,7 @@ export default function PowerBiView({
                         {selectedMonthNum && (
                           <button
                             onClick={() => setSelectedMonthNum(null)}
-                            className="px-2 py-1 bg-red-950/30 hover:bg-red-900/40 text-red-400 text-[10px] font-mono border border-red-500/30 rounded flex items-center gap-1 transition"
+                            className="px-2 py-1 bg-orange-950/30 hover:bg-orange-900/40 text-orange-400 text-[10px] font-mono border border-orange-500/30 rounded flex items-center gap-1 transition"
                           >
                             <span>✕</span>
                             <span>{R.clearFilter}</span>
@@ -785,7 +785,7 @@ export default function PowerBiView({
                                 />
                               )}
 
-                              {/* Opened RNC Bar (Red) */}
+                              {/* Opened RNC Bar (Orange) */}
                               {m.opened > 0 && (
                                 <rect
                                   x={xOpened}
@@ -905,7 +905,7 @@ export default function PowerBiView({
                     <div className="flex flex-wrap justify-between items-center text-[10px] font-mono text-gray-400 border-t border-[#2a2a2b] pt-2 mt-1">
                       <div className="flex gap-4 items-center">
                         <span className="flex items-center gap-1">
-                          <span className="w-2.5 h-2.5 bg-red-600 rounded-sm" />
+                          <span className="w-2.5 h-2.5 bg-orange-600 rounded-sm" />
                           {R.colOpened}
                         </span>
                         <span className="flex items-center gap-1">
@@ -939,7 +939,7 @@ export default function PowerBiView({
                           </p>
                           <p className="flex justify-between">
                             <span className="text-gray-400">{R.colOpened}:</span>
-                            <span className="text-red-400 font-bold">{m.opened}</span>
+                            <span className="text-orange-400 font-bold">{m.opened}</span>
                           </p>
                           <p className="flex justify-between">
                             <span className="text-gray-400">{R.colResolved}:</span>
@@ -960,11 +960,11 @@ export default function PowerBiView({
                     <div>
                       <div className="flex justify-between items-center border-b border-[#2d2d2d] pb-2 mb-3">
                         <h4 className="text-xs font-bold font-mono text-gray-300 flex items-center gap-1.5 uppercase">
-                          <ShieldAlert className="w-4 h-4 text-red-500" />
+                          <ShieldAlert className="w-4 h-4 text-orange-500" />
                           {R.gridTitle}
                         </h4>
                         
-                        <span className="text-[10px] bg-red-400/10 text-red-400 px-1.5 py-0.2 rounded font-mono font-bold border border-red-500/20">
+                        <span className="text-[10px] bg-orange-400/10 text-orange-400 px-1.5 py-0.2 rounded font-mono font-bold border border-orange-500/20">
                           {selectedMonthNum ? `Jan - Jun` : `All Portfolio`}
                         </span>
                       </div>
@@ -1013,7 +1013,7 @@ export default function PowerBiView({
                                     <h5 className="font-extrabold text-white flex items-center gap-1.5">
                                       <span className={`w-2 h-2 rounded-full ${
                                         r.status === 'RESOLVED' ? 'bg-green-500' :
-                                        r.status === 'ACTION_PLAN' ? 'bg-red-500' : 'bg-red-500 animate-pulse'
+                                        r.status === 'ACTION_PLAN' ? 'bg-orange-500' : 'bg-orange-500 animate-pulse'
                                       }`} />
                                       <span className="text-yellow-500">{r.code}</span>
                                       <span className="text-[8px] bg-gray-800 text-gray-300 px-1 py-0.2 rounded shrink-0">
@@ -1026,8 +1026,8 @@ export default function PowerBiView({
                                   <div className="text-right shrink-0 font-mono text-[9px] space-y-1">
                                     {/* Severity pill */}
                                     <span className={`px-1.5 py-0.2 rounded font-bold uppercase ${
-                                      isCritical ? 'bg-red-950/20 text-red-400 border border-red-500/20' :
-                                      isMedium ? 'bg-red-950/20 text-red-400 border border-red-500/20' :
+                                      isCritical ? 'bg-orange-950/20 text-orange-400 border border-orange-500/20' :
+                                      isMedium ? 'bg-orange-950/20 text-orange-400 border border-orange-500/20' :
                                       'bg-gray-800 text-gray-400'
                                     }`}>
                                       {r.severity}
@@ -1049,7 +1049,7 @@ export default function PowerBiView({
                                     </div>
 
                                     <div className="space-y-1">
-                                      <p className="font-extrabold text-red-500 font-mono text-[9px] uppercase tracking-wider flex items-center gap-1">
+                                      <p className="font-extrabold text-orange-500 font-mono text-[9px] uppercase tracking-wider flex items-center gap-1">
                                         <ArrowRight className="w-3 h-3 text-[#f2c811]" />
                                         {R.actionPlan}:
                                       </p>
@@ -1067,7 +1067,7 @@ export default function PowerBiView({
                                         </span>
                                       </p>
                                     ) : (
-                                      <p className="text-[9px] font-mono text-red-400 flex items-center gap-1 mt-1">
+                                      <p className="text-[9px] font-mono text-orange-400 flex items-center gap-1 mt-1">
                                         <Clock className="w-3.5 h-3.5" />
                                         <span>
                                           {language === 'PT' ? 'Ação Corretiva em Execução' :
@@ -1118,7 +1118,7 @@ export default function PowerBiView({
                       <td className="p-2 truncate text-gray-500">{i.projectName}</td>
                       <td className={`p-2 font-bold ${
                         i.status === ChecklistStatus.APPROVED ? 'text-green-400' :
-                        i.status === ChecklistStatus.REJECTED ? 'text-red-400' : 'text-gray-400'
+                        i.status === ChecklistStatus.REJECTED ? 'text-orange-400' : 'text-gray-400'
                       }`}>
                         {i.status}
                       </td>
