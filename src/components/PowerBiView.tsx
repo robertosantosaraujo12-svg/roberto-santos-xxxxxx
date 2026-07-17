@@ -636,10 +636,10 @@ export default function PowerBiView({
                     <span className="text-xl font-extrabold text-red-400 block mt-0.5">{openCount}</span>
                     <span className="text-[8px] text-red-500/80">Críticas Sem Solução</span>
                   </div>
-                  <div className="bg-[#1e1e1e] p-3 border-l-4 border-amber-500 rounded font-mono">
+                  <div className="bg-[#1e1e1e] p-3 border-l-4 border-red-500 rounded font-mono">
                     <span className="text-[9px] text-gray-500 block uppercase font-bold">{R.cardPlan}</span>
-                    <span className="text-xl font-extrabold text-amber-500 block mt-0.5">{planCount}</span>
-                    <span className="text-[8px] text-amber-400/80">Mitigação em Curso</span>
+                    <span className="text-xl font-extrabold text-red-500 block mt-0.5">{planCount}</span>
+                    <span className="text-[8px] text-red-400/80">Mitigação em Curso</span>
                   </div>
                   <div className="bg-[#1e1e1e] p-3 border-l-4 border-green-500 rounded font-mono">
                     <span className="text-[9px] text-gray-400 block uppercase font-bold">{R.cardClosed}</span>
@@ -1013,7 +1013,7 @@ export default function PowerBiView({
                                     <h5 className="font-extrabold text-white flex items-center gap-1.5">
                                       <span className={`w-2 h-2 rounded-full ${
                                         r.status === 'RESOLVED' ? 'bg-green-500' :
-                                        r.status === 'ACTION_PLAN' ? 'bg-amber-500' : 'bg-red-500 animate-pulse'
+                                        r.status === 'ACTION_PLAN' ? 'bg-red-500' : 'bg-red-500 animate-pulse'
                                       }`} />
                                       <span className="text-yellow-500">{r.code}</span>
                                       <span className="text-[8px] bg-gray-800 text-gray-300 px-1 py-0.2 rounded shrink-0">
@@ -1027,7 +1027,7 @@ export default function PowerBiView({
                                     {/* Severity pill */}
                                     <span className={`px-1.5 py-0.2 rounded font-bold uppercase ${
                                       isCritical ? 'bg-red-950/20 text-red-400 border border-red-500/20' :
-                                      isMedium ? 'bg-amber-950/20 text-amber-400 border border-amber-500/20' :
+                                      isMedium ? 'bg-red-950/20 text-red-400 border border-red-500/20' :
                                       'bg-gray-800 text-gray-400'
                                     }`}>
                                       {r.severity}
@@ -1049,7 +1049,7 @@ export default function PowerBiView({
                                     </div>
 
                                     <div className="space-y-1">
-                                      <p className="font-extrabold text-amber-500 font-mono text-[9px] uppercase tracking-wider flex items-center gap-1">
+                                      <p className="font-extrabold text-red-500 font-mono text-[9px] uppercase tracking-wider flex items-center gap-1">
                                         <ArrowRight className="w-3 h-3 text-[#f2c811]" />
                                         {R.actionPlan}:
                                       </p>

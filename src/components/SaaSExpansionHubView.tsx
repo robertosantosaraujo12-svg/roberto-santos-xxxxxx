@@ -528,8 +528,8 @@ Roberto Santos de Araujo`;
     <div className="space-y-6">
       
       {/* Intro Header */}
-      <div className="bg-gradient-to-r from-amber-500/10 to-transparent border-l-4 border-amber-500 p-5 rounded-r-xl bg-gray-950/40">
-        <div className="flex items-center gap-2 text-amber-500">
+      <div className="bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 p-5 rounded-r-xl bg-gray-950/40">
+        <div className="flex items-center gap-2 text-red-500">
           <Sparkles className="w-5 h-5" />
           <span className="text-xs font-mono font-bold uppercase tracking-widest">Master Strategy Suite</span>
         </div>
@@ -565,7 +565,7 @@ Roberto Santos de Araujo`;
                   onClick={() => setActiveTab(tab.id as any)}
                   className={`py-2.5 px-3 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer ${
                     activeTab === tab.id 
-                      ? 'bg-amber-500 text-black shadow' 
+                      ? 'bg-red-500 text-black shadow' 
                       : 'text-gray-400 hover:text-white hover:bg-gray-900'
                   }`}
                 >
@@ -583,7 +583,7 @@ Roberto Santos de Araujo`;
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Navigation index */}
           <div className="lg:col-span-4 space-y-3">
-            <h3 className="text-xs font-bold font-mono text-amber-500 uppercase tracking-widest block">
+            <h3 className="text-xs font-bold font-mono text-red-500 uppercase tracking-widest block">
               {language === 'PT' ? 'Passo a Passo do Usuário' : 'Step-by-step Index'}
             </h3>
             
@@ -602,11 +602,11 @@ Roberto Santos de Araujo`;
                     onClick={() => setActiveWalkthroughStep(idx)}
                     className={`w-full text-left p-3.5 rounded-lg border transition-all flex gap-3 cursor-pointer ${
                       isSelected 
-                        ? 'bg-amber-500/10 border-amber-500 text-white' 
+                        ? 'bg-red-500/10 border-red-500 text-white' 
                         : 'bg-gray-950/40 border-gray-900 text-gray-400 hover:border-gray-850 hover:text-white'
                     }`}
                   >
-                    <div className={`p-1.5 rounded-md ${isSelected ? 'bg-amber-500 text-black' : 'bg-gray-900 text-amber-500/80'} shrink-0`}>
+                    <div className={`p-1.5 rounded-md ${isSelected ? 'bg-red-500 text-black' : 'bg-gray-900 text-red-500/80'} shrink-0`}>
                       <Icon className="w-4 h-4" />
                     </div>
                     <div>
@@ -620,7 +620,7 @@ Roberto Santos de Araujo`;
 
             <div className="bg-gray-950/60 border border-gray-900 rounded-lg p-4 font-mono text-[11px] leading-relaxed text-gray-400">
               <span className="text-white font-bold block mb-1">💡 DIDÁTICA PARA CLIENTES</span>
-              Quando enviar a plataforma aos clientes, peça que entrem com seu código de inquilino exclusivo (ex: <code className="text-amber-500 font-bold">cliente-demo</code> / senha: <code className="text-amber-500 font-bold">demo123</code>). Eles verão apenas os seus respectivos projetos de forma restrita e totalmente isolada!
+              Quando enviar a plataforma aos clientes, peça que entrem com seu código de inquilino exclusivo (ex: <code className="text-red-500 font-bold">cliente-demo</code> / senha: <code className="text-red-500 font-bold">demo123</code>). Eles verão apenas os seus respectivos projetos de forma restrita e totalmente isolada!
             </div>
           </div>
 
@@ -629,7 +629,7 @@ Roberto Santos de Araujo`;
             {activeWalkthroughStep === 0 && (
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <div className="p-1.5 bg-amber-500/10 text-amber-500 border border-amber-500/20 rounded-md">
+                  <div className="p-1.5 bg-red-500/10 text-red-500 border border-red-500/20 rounded-md">
                     <Lock className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-bold font-mono text-gray-400 tracking-wider uppercase">DIDÁTICA: ETAPA DE ACESSO MULTI-TENANT</span>
@@ -652,7 +652,7 @@ Roberto Santos de Araujo`;
                     <label className="text-[10px] text-gray-500 block uppercase">Código da Empresa</label>
                     <div className="mt-1 px-3 py-2 bg-gray-950 border border-gray-800 rounded font-bold text-white flex justify-between items-center">
                       <span>cliente-demo</span>
-                      <span className="text-[9px] bg-amber-500/10 text-amber-500 border border-amber-500/20 px-1 rounded">MAPPED</span>
+                      <span className="text-[9px] bg-red-500/10 text-red-500 border border-red-500/20 px-1 rounded">MAPPED</span>
                     </div>
                   </div>
                   <div>
@@ -661,8 +661,8 @@ Roberto Santos de Araujo`;
                       <span>••••••••••</span>
                     </div>
                   </div>
-                  <div className="p-2.5 bg-amber-500/5 border border-amber-500/10 rounded text-[10px] text-gray-400 text-left">
-                    🔑 <strong className="text-amber-400">Restrição Absoluta</strong>: O inquilino só visualiza projetos cujo campo <em>Client</em> corresponda estritamente à sua chave.
+                  <div className="p-2.5 bg-red-500/5 border border-red-500/10 rounded text-[10px] text-gray-400 text-left">
+                    🔑 <strong className="text-red-400">Restrição Absoluta</strong>: O inquilino só visualiza projetos cujo campo <em>Client</em> corresponda estritamente à sua chave.
                   </div>
                 </div>
               </div>
@@ -671,7 +671,7 @@ Roberto Santos de Araujo`;
             {activeWalkthroughStep === 1 && (
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <div className="p-1.5 bg-amber-500/10 text-amber-500 border border-amber-500/20 rounded-md">
+                  <div className="p-1.5 bg-red-500/10 text-red-500 border border-red-500/20 rounded-md">
                     <CheckCircle className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-bold font-mono text-gray-400 tracking-wider uppercase">DIDÁTICA: AUDITORIA DO CHECKLIST DE 71 ITENS</span>
@@ -691,7 +691,7 @@ Roberto Santos de Araujo`;
                   <div className="p-3 bg-gray-950 border border-gray-850 rounded flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <div className="space-y-0.5">
                       <div className="flex items-center gap-2">
-                        <span className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-1.5 py-0.2 rounded font-bold text-[10px]">SUMA-30</span>
+                        <span className="bg-red-500/10 text-red-500 border border-red-500/20 px-1.5 py-0.2 rounded font-bold text-[10px]">SUMA-30</span>
                         <span className="text-white font-bold font-sans text-xs">Relatório de Inspeção de Líquido Penetrante</span>
                       </div>
                       <p className="text-[10px] text-gray-500 font-sans">Item técnico obrigatório para liberação estrutural de spools de alta pressão.</p>
@@ -701,7 +701,7 @@ Roberto Santos de Araujo`;
                       <span className={`px-2 py-0.5 text-[9px] rounded uppercase font-bold border ${
                         demoItemApproved 
                           ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' 
-                          : 'bg-amber-500/10 border-amber-500/30 text-amber-400'
+                          : 'bg-red-500/10 border-red-500/30 text-red-400'
                       }`}>
                         {demoItemApproved ? 'APROVADO / APPROVED' : 'PENDENTE / PENDING'}
                       </span>
@@ -725,7 +725,7 @@ Roberto Santos de Araujo`;
             {activeWalkthroughStep === 2 && (
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <div className="p-1.5 bg-amber-500/10 text-amber-500 border border-amber-500/20 rounded-md">
+                  <div className="p-1.5 bg-red-500/10 text-red-500 border border-red-500/20 rounded-md">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-bold font-mono text-gray-400 tracking-wider uppercase">DIDÁTICA: VALIDAÇÃO DE ASSINATURA ICP-BRASIL</span>
@@ -752,7 +752,7 @@ Roberto Santos de Araujo`;
                         <div className="bg-gray-900/55 p-2 rounded text-[10px] text-left space-y-1 text-gray-450 border border-gray-850">
                           <div><span className="text-gray-500 uppercase">Assinante:</span> Roberto Santos de Araujo</div>
                           <div><span className="text-gray-500 uppercase">Autoridade Emissora:</span> ICP-Brasil Serpro AC v5</div>
-                          <div><span className="text-gray-500 uppercase">Firma Digital (SHA-256):</span> <code className="text-amber-500 text-[9px] break-all">{demoHash}</code></div>
+                          <div><span className="text-gray-500 uppercase">Firma Digital (SHA-256):</span> <code className="text-red-500 text-[9px] break-all">{demoHash}</code></div>
                         </div>
                         <button
                           onClick={() => {
@@ -766,13 +766,13 @@ Roberto Santos de Araujo`;
                       </div>
                     ) : (
                       <div className="py-2 space-y-2">
-                        <p className="text-[11px] text-gray-400">O arquivo <strong className="text-amber-500 font-sans">P78-LP-REP-4001.pdf</strong> está aguardando homologação do inspetor.</p>
+                        <p className="text-[11px] text-gray-400">O arquivo <strong className="text-red-500 font-sans">P78-LP-REP-4001.pdf</strong> está aguardando homologação do inspetor.</p>
                         <button
                           onClick={() => {
                             setDemoSigned(true);
                             setDemoHash('SHA256:e3b0c44298fc1c149afbf4c8996f' + Math.floor(Math.random()*1000000).toString(16) + '4ca495991b7852b855');
                           }}
-                          className="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-black font-bold rounded text-xs transition-all cursor-pointer inline-flex items-center gap-1.5"
+                          className="px-3 py-1.5 bg-red-500 hover:bg-red-600 text-black font-bold rounded text-xs transition-all cursor-pointer inline-flex items-center gap-1.5"
                         >
                           <ShieldCheck className="w-4 h-4" />
                           <span>Simular Assinatura Digital ICP</span>
@@ -787,7 +787,7 @@ Roberto Santos de Araujo`;
             {activeWalkthroughStep === 3 && (
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <div className="p-1.5 bg-amber-500/10 text-amber-500 border border-amber-500/20 rounded-md">
+                  <div className="p-1.5 bg-red-500/10 text-red-500 border border-red-500/20 rounded-md">
                     <FileText className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-bold font-mono text-gray-400 tracking-wider uppercase">DIDÁTICA: COMPILAÇÃO DO DATABOOK DE ENTREGA</span>
@@ -805,12 +805,12 @@ Roberto Santos de Araujo`;
                   <span className="text-[10px] text-gray-500 block uppercase font-bold text-left">Representação do Compilador:</span>
                   
                   <div className="bg-gray-950 p-4 rounded border border-gray-850 flex flex-col items-center justify-center space-y-2">
-                    <span className="text-amber-500 text-2xl">📚</span>
+                    <span className="text-red-500 text-2xl">📚</span>
                     <h5 className="font-sans text-white font-bold">Dossiê Técnico Consolidado da Plataforma</h5>
                     <p className="text-[10px] text-gray-500 font-sans max-w-sm">Pronto para apresentação em fiscalizações governamentais (ANP/Inmetro).</p>
                     
                     <div className="w-full bg-gray-900 h-1.5 rounded-full overflow-hidden mt-2">
-                      <div className="bg-amber-500 h-full w-full animate-pulse" />
+                      <div className="bg-red-500 h-full w-full animate-pulse" />
                     </div>
                     
                     <span className="text-[9px] text-teal-400 uppercase font-bold tracking-wider">71 de 71 quesitos indexados • Paginação sequencial 1 a 144</span>
@@ -852,7 +852,7 @@ Roberto Santos de Araujo`;
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
               <div>
                 <h3 className="text-base font-bold text-white uppercase font-mono tracking-wide flex items-center gap-1.5">
-                  <Receipt className="w-5 h-5 text-amber-500" />
+                  <Receipt className="w-5 h-5 text-red-500" />
                   <span>Simulador Financeiro de Escala B2B SaaS</span>
                 </h3>
                 <p className="text-xs text-gray-400 mt-1">
@@ -871,7 +871,7 @@ Roberto Santos de Araujo`;
                   setFeePerItem(75);
                   setFixedCosts(30000);
                 }}
-                className="px-2.5 py-1 bg-amber-500/10 border border-amber-500/20 text-amber-500 hover:bg-amber-500 hover:text-black rounded text-[10px] font-mono font-bold uppercase transition cursor-pointer"
+                className="px-2.5 py-1 bg-red-500/10 border border-red-500/20 text-red-500 hover:bg-red-500 hover:text-black rounded text-[10px] font-mono font-bold uppercase transition cursor-pointer"
               >
                 ★ Restaurar Cenário Sugerido (30 Clientes / 1 OS / 20 Requisitos)
               </button>
@@ -884,7 +884,7 @@ Roberto Santos de Araujo`;
               <div className="space-y-2 bg-gray-900/30 p-3 rounded-lg border border-gray-900">
                 <div className="flex justify-between items-center text-xs font-mono">
                   <span className="text-gray-400 uppercase font-bold">1. Empresas Ativas:</span>
-                  <span className="text-amber-500 font-bold">{clientsCount} clientes</span>
+                  <span className="text-red-500 font-bold">{clientsCount} clientes</span>
                 </div>
                 <input 
                   type="range" 
@@ -892,7 +892,7 @@ Roberto Santos de Araujo`;
                   max="100" 
                   value={clientsCount} 
                   onChange={(e) => setClientsCount(parseInt(e.target.value))}
-                  className="w-full accent-amber-500 h-1 bg-gray-950 rounded-lg cursor-pointer"
+                  className="w-full accent-red-500 h-1 bg-gray-950 rounded-lg cursor-pointer"
                 />
                 <span className="text-[9px] text-gray-500 block leading-tight font-mono font-sans">Volume de empresas independentes cadastradas na plataforma.</span>
               </div>
@@ -901,7 +901,7 @@ Roberto Santos de Araujo`;
               <div className="space-y-2 bg-gray-900/30 p-3 rounded-lg border border-gray-900">
                 <div className="flex justify-between items-center text-xs font-mono">
                   <span className="text-gray-400 uppercase font-bold">2. Docs/Itens por Cliente:</span>
-                  <span className="text-amber-500 font-bold">{requirementsPerClient} docs</span>
+                  <span className="text-red-500 font-bold">{requirementsPerClient} docs</span>
                 </div>
                 <input 
                   type="range" 
@@ -909,7 +909,7 @@ Roberto Santos de Araujo`;
                   max="71" 
                   value={requirementsPerClient} 
                   onChange={(e) => setRequirementsPerClient(parseInt(e.target.value))}
-                  className="w-full accent-amber-500 h-1 bg-gray-950 rounded-lg cursor-pointer"
+                  className="w-full accent-red-500 h-1 bg-gray-950 rounded-lg cursor-pointer"
                 />
                 <span className="text-[9px] text-gray-500 block leading-tight font-mono font-sans">Qtd. média de documentos de checklist homologados p/ empresa.</span>
               </div>
@@ -1036,14 +1036,14 @@ Roberto Santos de Araujo`;
 
             {/* Break-even Point Card */}
             <div className={`bg-[#0b0f19] border p-5 rounded-xl space-y-1 relative overflow-hidden ${
-              clientsCount >= breakEvenClients ? 'border-amber-500/30' : 'border-red-500/30'
+              clientsCount >= breakEvenClients ? 'border-red-500/30' : 'border-red-500/30'
             }`}>
-              <span className="text-[10px] text-amber-400 uppercase tracking-wider block">Ponto de Equilíbrio (Mínimo)</span>
-              <p className="text-xl sm:text-2xl font-black text-amber-500">{breakEvenClients} {breakEvenClients === 1 ? 'Cliente Ativo' : 'Clientes Ativos'}</p>
+              <span className="text-[10px] text-red-400 uppercase tracking-wider block">Ponto de Equilíbrio (Mínimo)</span>
+              <p className="text-xl sm:text-2xl font-black text-red-500">{breakEvenClients} {breakEvenClients === 1 ? 'Cliente Ativo' : 'Clientes Ativos'}</p>
               <span className="text-[9px] text-gray-500 block pt-1 border-t border-gray-900/80">
                 {clientsCount >= breakEvenClients ? '✔ Lucrativo no cenário atual' : '✘ Adicione clientes para atingir o breakeven'}
               </span>
-              <div className="absolute top-1/2 right-4 -translate-y-1/2 text-amber-500/5 text-5xl font-black select-none pointer-events-none">BREAK</div>
+              <div className="absolute top-1/2 right-4 -translate-y-1/2 text-red-500/5 text-5xl font-black select-none pointer-events-none">BREAK</div>
             </div>
 
             {/* Total maintenance costs */}
@@ -1114,10 +1114,10 @@ Roberto Santos de Araujo`;
               </div>
 
               {/* Insight block */}
-              <div className="bg-amber-500/5 border border-amber-500/20 p-4 rounded-lg flex items-start gap-3 text-xs leading-relaxed">
-                <Info className="w-5 h-5 shrink-0 text-amber-500 mt-0.5" />
+              <div className="bg-red-500/5 border border-red-500/20 p-4 rounded-lg flex items-start gap-3 text-xs leading-relaxed">
+                <Info className="w-5 h-5 shrink-0 text-red-500 mt-0.5" />
                 <div className="space-y-1 text-gray-300">
-                  <strong className="text-amber-500 font-mono text-[11px] uppercase block">ANÁLISE DE VIABILIDADE E PONTO DE EQUILÍBRIO (PREMISSA DE NEGÓCIO DE EXCELÊNCIA)</strong>
+                  <strong className="text-red-500 font-mono text-[11px] uppercase block">ANÁLISE DE VIABILIDADE E PONTO DE EQUILÍBRIO (PREMISSA DE NEGÓCIO DE EXCELÊNCIA)</strong>
                   <div className="space-y-2 text-gray-300">
                     <p>
                       Sua nova premissa de precificação é composta por: 
@@ -1129,7 +1129,7 @@ Roberto Santos de Araujo`;
                       Sob essa premissa, cada cliente ativo gera um faturamento mensal recorrente (MRR) médio de <strong>R$ {mrrPerClient.toLocaleString('pt-BR')}</strong> (considerando {activeOSPerClient} OS ativa e {requirementsPerClient} documentos assinados/mês).
                     </p>
                     <p className="mt-1">
-                      Para cobrir seu custo fixo operacional de <strong>R$ {fixedCosts.toLocaleString('pt-BR')}</strong>, o seu <strong className="text-amber-400">Ponto de Equilíbrio (Break-Even) é de {breakEvenClients} {breakEvenClients === 1 ? 'cliente ativo' : 'clientes ativos'}</strong> por mês.
+                      Para cobrir seu custo fixo operacional de <strong>R$ {fixedCosts.toLocaleString('pt-BR')}</strong>, o seu <strong className="text-red-400">Ponto de Equilíbrio (Break-Even) é de {breakEvenClients} {breakEvenClients === 1 ? 'cliente ativo' : 'clientes ativos'}</strong> por mês.
                     </p>
                     <p className="mt-1 text-gray-400">
                       No cenário de <strong>{clientsCount} clientes ativos</strong>, você fatura <strong>R$ {totalGrossRevenue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong>, gerando um lucro líquido excepcional de <strong>R$ {netProfit.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong> com margem líquida de <strong className="text-teal-400 font-mono font-bold">{profitMargin.toFixed(1)}%</strong>. O payback de CAC fica em <strong>{paybackMonths} {paybackMonths === 1 ? 'mês' : 'meses'}</strong>.
@@ -1148,7 +1148,7 @@ Roberto Santos de Araujo`;
           {/* IP protection educational card */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-gray-950/40 border border-gray-900 rounded-xl p-5 space-y-4">
-              <div className="flex items-center gap-2 text-amber-500 font-mono text-xs font-bold">
+              <div className="flex items-center gap-2 text-red-500 font-mono text-xs font-bold">
                 <Shield className="w-5 h-5" />
                 <span className="uppercase tracking-wider">Proteção de Negócios e Ideia</span>
               </div>
@@ -1165,19 +1165,19 @@ Roberto Santos de Araujo`;
                 
                 <ul className="space-y-2 font-mono text-[11px] list-disc pl-4 text-gray-300">
                   <li>
-                    <strong className="text-amber-550">1. Termos de Uso e NDA Digital</strong>: Um acordo eletrônico de não-divulgação e sigilo aceito pelo cliente com 1 único clique <em>antes</em> do primeiro acesso ao sistema.
+                    <strong className="text-red-550">1. Termos de Uso e NDA Digital</strong>: Um acordo eletrônico de não-divulgação e sigilo aceito pelo cliente com 1 único clique <em>antes</em> do primeiro acesso ao sistema.
                   </li>
                   <li>
-                    <strong className="text-amber-550">2. Patente & Direito de Software</strong>: O código visual, arquitetura e fluxo de 71 quesitos do Piramidy são protegidos pela Lei de Software (Lei Nº 9.609/98).
+                    <strong className="text-red-550">2. Patente & Direito de Software</strong>: O código visual, arquitetura e fluxo de 71 quesitos do Piramidy são protegidos pela Lei de Software (Lei Nº 9.609/98).
                   </li>
                   <li>
-                    <strong className="text-amber-550">3. Custódia Criptográfica</strong>: Assinar digitalmente as ações cria trilhas de auditoria auditáveis que provam legalmente que eles utilizaram sua tecnologia proprietária.
+                    <strong className="text-red-550">3. Custódia Criptográfica</strong>: Assinar digitalmente as ações cria trilhas de auditoria auditáveis que provam legalmente que eles utilizaram sua tecnologia proprietária.
                   </li>
                 </ul>
               </div>
 
               {/* IP legal certificate banner */}
-              <div className="bg-amber-500/5 border border-amber-500/20 p-3 rounded text-[10px] text-amber-500 font-mono text-left space-y-1">
+              <div className="bg-red-500/5 border border-red-500/20 p-3 rounded text-[10px] text-red-500 font-mono text-left space-y-1">
                 <span>🛡️ COMPLIANCE REGULATION STANDARDS MET</span>
                 <p className="text-gray-400 font-sans text-[10px] leading-relaxed">
                   Todos os acessos de teste registram endereço IP, hora UTC, identificadores do navegador e cookies de aceitação do termo, servindo como evidência incontestável de autoria em disputas de segredo comercial.
@@ -1189,7 +1189,7 @@ Roberto Santos de Araujo`;
           {/* Interactive NDA sign-off simulator */}
           <div className="lg:col-span-7 bg-[#0b0f19] border border-gray-900 rounded-xl p-5 sm:p-6 space-y-4">
             <div>
-              <h4 className="text-xs font-bold font-mono text-amber-500 uppercase tracking-wider">Simulador de Acordo de Confidencialidade (NDA)</h4>
+              <h4 className="text-xs font-bold font-mono text-red-500 uppercase tracking-wider">Simulador de Acordo de Confidencialidade (NDA)</h4>
               <p className="text-[11px] text-gray-500 font-mono uppercase mt-0.5">Assine acordos fictícios para demonstrar o fluxo de governança legal ao enviar acessos de teste.</p>
             </div>
 
@@ -1257,7 +1257,7 @@ Roberto Santos de Araujo`;
                   id="ndaCheckbox"
                   checked={ndaAgreed}
                   onChange={(e) => setNdaAgreed(e.target.checked)}
-                  className="rounded bg-gray-900 border-gray-800 text-amber-500 focus:ring-0 cursor-pointer h-4 w-4"
+                  className="rounded bg-gray-900 border-gray-800 text-red-500 focus:ring-0 cursor-pointer h-4 w-4"
                 />
                 <label htmlFor="ndaCheckbox" className="text-[11px] text-gray-300 select-none cursor-pointer">
                   Confirmo que li e aceito as cláusulas de confidencialidade em nome da {selectedNdaClient}.
@@ -1268,7 +1268,7 @@ Roberto Santos de Araujo`;
                 <button
                   disabled={!ndaAgreed || isNdaSigningActive}
                   onClick={simulateSignature}
-                  className="px-4 py-2 bg-amber-500 hover:bg-amber-600 disabled:opacity-30 disabled:hover:bg-amber-500 text-black font-bold rounded transition-all cursor-pointer flex items-center gap-1.5 shadow-md shadow-amber-500/5"
+                  className="px-4 py-2 bg-red-500 hover:bg-red-600 disabled:opacity-30 disabled:hover:bg-red-500 text-black font-bold rounded transition-all cursor-pointer flex items-center gap-1.5 shadow-md shadow-red-500/5"
                 >
                   {isNdaSigningActive ? (
                     <>
@@ -1302,7 +1302,7 @@ Roberto Santos de Araujo`;
                   <tbody className="divide-y divide-gray-850 text-gray-300">
                     {signedNdas.map((n) => (
                       <tr key={n.id} className="hover:bg-gray-900/10">
-                        <td className="p-2 font-bold text-amber-500">{n.id}</td>
+                        <td className="p-2 font-bold text-red-500">{n.id}</td>
                         <td className="p-2 text-white font-sans font-bold">{n.client}</td>
                         <td className="p-2 font-sans">{n.signee}</td>
                         <td className="p-2 text-gray-500">{n.date}</td>
@@ -1325,7 +1325,7 @@ Roberto Santos de Araujo`;
           {/* Customizer variables panel */}
           <div className="lg:col-span-4 space-y-4">
             <div className="bg-gray-950/40 border border-gray-900 rounded-xl p-5 space-y-4">
-              <div className="flex items-center gap-2 text-amber-500 font-mono text-xs font-bold">
+              <div className="flex items-center gap-2 text-red-500 font-mono text-xs font-bold">
                 <Mail className="w-5 h-5" />
                 <span className="uppercase tracking-wider">Gerador de Convite para Clientes</span>
               </div>
@@ -1364,7 +1364,7 @@ Roberto Santos de Araujo`;
                       onClick={() => setInviteTone('corporate')}
                       className={`py-1.5 border rounded transition cursor-pointer ${
                         inviteTone === 'corporate' 
-                          ? 'bg-amber-500 border-amber-500 text-black font-bold' 
+                          ? 'bg-red-500 border-red-500 text-black font-bold' 
                           : 'bg-gray-900 border-gray-800 text-gray-400 hover:text-white'
                       }`}
                     >
@@ -1374,7 +1374,7 @@ Roberto Santos de Araujo`;
                       onClick={() => setInviteTone('direct')}
                       className={`py-1.5 border rounded transition cursor-pointer ${
                         inviteTone === 'direct' 
-                          ? 'bg-amber-500 border-amber-500 text-black font-bold' 
+                          ? 'bg-red-500 border-red-500 text-black font-bold' 
                           : 'bg-gray-900 border-gray-800 text-gray-400 hover:text-white'
                       }`}
                     >
@@ -1384,7 +1384,7 @@ Roberto Santos de Araujo`;
                       onClick={() => setInviteTone('collaborative')}
                       className={`py-1.5 border rounded transition cursor-pointer ${
                         inviteTone === 'collaborative' 
-                          ? 'bg-amber-500 border-amber-500 text-black font-bold' 
+                          ? 'bg-red-500 border-red-500 text-black font-bold' 
                           : 'bg-gray-900 border-gray-800 text-gray-400 hover:text-white'
                       }`}
                     >
@@ -1410,7 +1410,7 @@ Roberto Santos de Araujo`;
               
               <button
                 onClick={() => handleCopyInvite(getInviteEmailBody())}
-                className="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-black font-bold rounded text-xs transition flex items-center gap-1.5 shadow cursor-pointer"
+                className="px-3 py-1.5 bg-red-500 hover:bg-red-600 text-black font-bold rounded text-xs transition flex items-center gap-1.5 shadow cursor-pointer"
               >
                 {inviteCopied ? (
                   <>
@@ -1448,7 +1448,7 @@ Roberto Santos de Araujo`;
           <div className="lg:col-span-5 space-y-4">
             <div className="bg-gray-950/60 border border-gray-900 rounded-xl p-5 space-y-4">
               <div className="flex items-center gap-2 pb-2 border-b border-gray-900">
-                <Landmark className="w-5 h-5 text-amber-500" />
+                <Landmark className="w-5 h-5 text-red-500" />
                 <h3 className="text-xs font-bold font-mono text-white uppercase tracking-wider text-left">
                   {language === 'PT' ? 'Configuração Fiscal - Santos/SP' : 'Fiscal Configuration - Santos/SP'}
                 </h3>
@@ -1464,7 +1464,7 @@ Roberto Santos de Araujo`;
                     onClick={() => { setNfseProvider('gateway'); if (nfseSimulationStep !== -1) setNfseSimulationStep(-1); }}
                     className={`py-1.5 rounded text-[10px] font-bold transition cursor-pointer ${
                       nfseProvider === 'gateway'
-                        ? 'bg-amber-500 text-black'
+                        ? 'bg-red-500 text-black'
                         : 'text-gray-400 hover:text-white'
                     }`}
                   >
@@ -1474,7 +1474,7 @@ Roberto Santos de Araujo`;
                     onClick={() => { setNfseProvider('direct'); if (nfseSimulationStep !== -1) setNfseSimulationStep(-1); }}
                     className={`py-1.5 rounded text-[10px] font-bold transition cursor-pointer ${
                       nfseProvider === 'direct'
-                        ? 'bg-amber-500 text-black'
+                        ? 'bg-red-500 text-black'
                         : 'text-gray-400 hover:text-white'
                     }`}
                   >
@@ -1510,7 +1510,7 @@ Roberto Santos de Araujo`;
                   <div>
                     <label className="text-[9px] text-gray-500 uppercase block">Certificado Digital A1</label>
                     <div className="flex items-center gap-1.5 mt-1 bg-gray-900 border border-gray-800 p-2 rounded text-gray-300">
-                      <Lock className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                      <Lock className="w-3.5 h-3.5 text-red-500 shrink-0" />
                       <span className="truncate text-[10px] text-gray-400">{certificadoA1Name}</span>
                     </div>
                   </div>
@@ -1574,7 +1574,7 @@ Roberto Santos de Araujo`;
                 className={`w-full py-3 rounded-lg font-bold font-mono text-xs transition-all cursor-pointer flex items-center justify-center gap-2 shadow ${
                   nfseSimulationStep >= 0 && nfseSimulationStep < 3
                     ? 'bg-gray-800 text-gray-500 border border-gray-700 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black active:scale-[0.98]'
+                    : 'bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-black active:scale-[0.98]'
                 }`}
               >
                 <Activity className={`w-4 h-4 shrink-0 ${nfseSimulationStep >= 0 && nfseSimulationStep < 3 ? 'animate-spin text-gray-500' : 'text-black'}`} />
@@ -1591,17 +1591,17 @@ Roberto Santos de Araujo`;
                   <span className="text-[10px] text-gray-500 font-mono uppercase block text-left font-bold">Fases do Protocolo Municipal</span>
                   <div className="grid grid-cols-4 gap-1.5 font-mono text-[9px] text-center">
                     <div className={`p-1.5 rounded border transition-all ${
-                      nfseSimulationStep >= 0 ? 'bg-amber-500/15 border-amber-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
+                      nfseSimulationStep >= 0 ? 'bg-red-500/15 border-red-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
                     }`}>
                       1. Payload
                     </div>
                     <div className={`p-1.5 rounded border transition-all ${
-                      nfseSimulationStep >= 1 ? 'bg-amber-500/15 border-amber-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
+                      nfseSimulationStep >= 1 ? 'bg-red-500/15 border-red-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
                     }`}>
                       2. Assina A1
                     </div>
                     <div className={`p-1.5 rounded border transition-all ${
-                      nfseSimulationStep >= 2 ? 'bg-amber-500/15 border-amber-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
+                      nfseSimulationStep >= 2 ? 'bg-red-500/15 border-red-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
                     }`}>
                       3. SOAP HTTPS
                     </div>
@@ -1617,7 +1617,7 @@ Roberto Santos de Araujo`;
 
             {/* Explanatory notes */}
             <div className="bg-gray-950/40 border border-gray-900 rounded-xl p-4 space-y-2 text-left">
-              <span className="text-[10px] font-bold font-mono text-amber-500 uppercase tracking-widest block">📝 REQUISITOS DE INTEGRAÇÃO EM SANTOS/SP</span>
+              <span className="text-[10px] font-bold font-mono text-red-500 uppercase tracking-widest block">📝 REQUISITOS DE INTEGRAÇÃO EM SANTOS/SP</span>
               <p className="text-[11px] text-gray-400 leading-relaxed font-sans">
                 A prefeitura de Santos/SP opera sob o padrão de Webservice municipal. Para homologação oficial em ambiente de produção da sua startup, você precisará de:
               </p>
@@ -1642,7 +1642,7 @@ Roberto Santos de Araujo`;
                     {nfseProvider === 'direct' ? 'Padrão ABRASF v2.01 com Assinatura Digital ICP-Brasil' : 'JSON Unificado para Gateway de Notas Fiscais'}
                   </span>
                 </div>
-                <span className="text-[10px] font-mono bg-gray-900 border border-gray-800 text-amber-500 px-2 py-0.5 rounded uppercase">
+                <span className="text-[10px] font-mono bg-gray-900 border border-gray-800 text-red-500 px-2 py-0.5 rounded uppercase">
                   {nfseProvider === 'direct' ? 'Direct SOAP' : 'REST JSON'}
                 </span>
               </div>
@@ -1664,14 +1664,14 @@ Roberto Santos de Araujo`;
               <div className="bg-[#0b0f19] border border-gray-900 rounded-xl p-4 space-y-2">
                 <div className="flex items-center justify-between text-[10px] font-mono uppercase text-gray-400 border-b border-gray-900 pb-1.5">
                   <span className="flex items-center gap-1.5 font-bold">
-                    <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                     LOGS DE EXECUÇÃO EM TEMPO REAL
                   </span>
                   <span>PREFEITURA DE SANTOS SP</span>
                 </div>
                 <div className="space-y-1 font-mono text-[10px] bg-gray-950 p-3 rounded border border-gray-900 max-h-36 overflow-y-auto leading-relaxed">
                   {nfseSimulationLogs.map((log, idx) => (
-                    <div key={idx} className={log.startsWith('✔') ? 'text-emerald-400 font-bold' : 'text-amber-500'}>
+                    <div key={idx} className={log.startsWith('✔') ? 'text-emerald-400 font-bold' : 'text-red-500'}>
                       [{new Date().toLocaleTimeString()}] {log}
                     </div>
                   ))}
@@ -1686,7 +1686,7 @@ Roberto Santos de Araujo`;
                   <span className="text-xs font-bold text-white block uppercase">Histórico de NFS-e Emitidas (Santos/SP)</span>
                   <span className="text-[9px] text-gray-500 uppercase">Notas homologadas e registradas no lote de RPS municipal</span>
                 </div>
-                <span className="text-xs font-mono font-bold text-amber-500">{emittedInvoices.length} Ativas</span>
+                <span className="text-xs font-mono font-bold text-red-500">{emittedInvoices.length} Ativas</span>
               </div>
 
               <div className="space-y-2 max-h-48 overflow-y-auto">
@@ -1702,7 +1702,7 @@ Roberto Santos de Araujo`;
                       </div>
                     </div>
                     <div className="flex sm:flex-col items-end gap-2 sm:gap-1 text-right w-full sm:w-auto">
-                      <span className="text-amber-500 font-bold block">R$ {inv.value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                      <span className="text-red-500 font-bold block">R$ {inv.value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
                       <div className="flex gap-2">
                         <button
                           onClick={() => {
@@ -1737,7 +1737,7 @@ Roberto Santos de Araujo`;
           {/* Header Description */}
           <div className="bg-[#0b0f19] border border-gray-900 rounded-xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-left">
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-amber-500 font-mono text-[11px] font-bold font-sans">
+              <div className="flex items-center gap-2 text-red-500 font-mono text-[11px] font-bold font-sans">
                 <Network className="w-4 h-4 animate-pulse" />
                 <span className="uppercase tracking-wider">Centro de Integrações Governamentais</span>
               </div>
@@ -1777,7 +1777,7 @@ Roberto Santos de Araujo`;
                   }}
                   className={`p-4 rounded-xl border text-left transition-all cursor-pointer flex gap-3 relative overflow-hidden ${
                     isSelected 
-                      ? 'bg-amber-500/10 border-amber-500 shadow-md' 
+                      ? 'bg-red-500/10 border-red-500 shadow-md' 
                       : 'bg-gray-950/40 border-gray-900 text-gray-400 hover:bg-gray-900/30'
                   }`}
                 >
@@ -1791,8 +1791,8 @@ Roberto Santos de Araujo`;
                     </span>
                   </div>
                   {isSelected && (
-                    <div className="absolute top-0 right-0 w-8 h-8 bg-amber-500/10 flex items-center justify-center rounded-bl-lg">
-                      <Check className="w-3.5 h-3.5 text-amber-500" />
+                    <div className="absolute top-0 right-0 w-8 h-8 bg-red-500/10 flex items-center justify-center rounded-bl-lg">
+                      <Check className="w-3.5 h-3.5 text-red-500" />
                     </div>
                   )}
                 </button>
@@ -1805,7 +1805,7 @@ Roberto Santos de Araujo`;
             <div className="lg:col-span-5 space-y-4">
               <div className="bg-gray-950/60 border border-gray-900 rounded-xl p-5 space-y-4">
                 <div className="flex items-center gap-2 pb-2 border-b border-gray-900">
-                  <Settings className="w-4 h-4 text-amber-500" />
+                  <Settings className="w-4 h-4 text-red-500" />
                   <span className="text-xs font-bold font-mono text-white uppercase tracking-wider">
                     {language === 'PT' ? 'Configuração do Gateway de Rede' : 'Gateway Connection Settings'}
                   </span>
@@ -1820,7 +1820,7 @@ Roberto Santos de Araujo`;
                         type="text" 
                         value={sapHost}
                         onChange={(e) => setSapHost(e.target.value)}
-                        className="mt-1 w-full bg-gray-900 border border-gray-800 text-gray-200 p-2 rounded focus:outline-none focus:border-amber-500"
+                        className="mt-1 w-full bg-gray-900 border border-gray-800 text-gray-200 p-2 rounded focus:outline-none focus:border-red-500"
                       />
                     </div>
                     <div className="grid grid-cols-3 gap-2">
@@ -1975,7 +1975,7 @@ Roberto Santos de Araujo`;
                         <button
                           onClick={() => setMsProjectMode('xml_import')}
                           className={`py-1.5 rounded text-[10px] font-bold transition cursor-pointer ${
-                            msProjectMode === 'xml_import' ? 'bg-amber-500 text-black' : 'text-gray-400 hover:text-white'
+                            msProjectMode === 'xml_import' ? 'bg-red-500 text-black' : 'text-gray-400 hover:text-white'
                           }`}
                         >
                           Manual XML Import
@@ -1983,7 +1983,7 @@ Roberto Santos de Araujo`;
                         <button
                           onClick={() => setMsProjectMode('rest_online')}
                           className={`py-1.5 rounded text-[10px] font-bold transition cursor-pointer ${
-                            msProjectMode === 'rest_online' ? 'bg-amber-500 text-black' : 'text-gray-400 hover:text-white'
+                            msProjectMode === 'rest_online' ? 'bg-red-500 text-black' : 'text-gray-400 hover:text-white'
                           }`}
                         >
                           REST API Cloud
@@ -2009,7 +2009,7 @@ Roberto Santos de Araujo`;
                   className={`w-full py-3 rounded-lg font-bold font-mono text-xs transition-all cursor-pointer flex items-center justify-center gap-2 shadow ${
                     isSyncing
                       ? 'bg-gray-800 text-gray-500 border border-gray-700 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black active:scale-[0.98]'
+                      : 'bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-black active:scale-[0.98]'
                   }`}
                 >
                   <RefreshCw className={`w-4 h-4 shrink-0 ${isSyncing ? 'animate-spin text-gray-500' : 'text-black'}`} />
@@ -2030,17 +2030,17 @@ Roberto Santos de Araujo`;
                     <span className="text-[10px] text-gray-500 font-mono uppercase block text-left font-bold">Fases da Sincronização Ativa</span>
                     <div className="grid grid-cols-4 gap-1.5 font-mono text-[9px] text-center">
                       <div className={`p-1.5 rounded border transition-all ${
-                        syncStep >= 0 ? 'bg-amber-500/15 border-amber-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
+                        syncStep >= 0 ? 'bg-red-500/15 border-red-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
                       }`}>
                         1. Handshake
                       </div>
                       <div className={`p-1.5 rounded border transition-all ${
-                        syncStep >= 1 ? 'bg-amber-500/15 border-amber-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
+                        syncStep >= 1 ? 'bg-red-500/15 border-red-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
                       }`}>
                         2. Schema
                       </div>
                       <div className={`p-1.5 rounded border transition-all ${
-                        syncStep >= 2 ? 'bg-amber-500/15 border-amber-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
+                        syncStep >= 2 ? 'bg-red-500/15 border-red-500 text-white' : 'bg-gray-900 border-gray-850 text-gray-600'
                       }`}>
                         3. Transfer
                       </div>
@@ -2056,7 +2056,7 @@ Roberto Santos de Araujo`;
 
               {/* Security Advisory */}
               <div className="bg-gray-950/45 border border-gray-900 rounded-xl p-4 space-y-2">
-                <span className="text-[10px] font-bold font-mono text-amber-500 uppercase tracking-widest block">🔒 CRIPTOGRAFIA E ISOLAMENTO DE DADOS</span>
+                <span className="text-[10px] font-bold font-mono text-red-500 uppercase tracking-widest block">🔒 CRIPTOGRAFIA E ISOLAMENTO DE DADOS</span>
                 <p className="text-[11px] text-gray-400 leading-relaxed font-sans">
                   {language === 'PT'
                     ? 'Todas as conexões do Piramid Energy Hub com gateways corporativos usam chaves de encriptação TLS 1.3 e protocolo WS-Security ou OAuth 2.0 seguro. Nossos payloads transportam as assinaturas ICP-Brasil qualificadas dos inspetores como metadados imutáveis para garantir rastreabilidade total.'
@@ -2075,7 +2075,7 @@ Roberto Santos de Araujo`;
                     <span className="text-xs font-bold text-gray-300 block uppercase font-sans">Console de Sincronização do Gateway</span>
                     <span className="text-[9px] text-gray-500 uppercase">Monitoramento de requisições e respostas em tempo real</span>
                   </div>
-                  <span className="text-[10px] bg-gray-900 border border-gray-800 text-amber-500 px-2 py-0.5 rounded uppercase">
+                  <span className="text-[10px] bg-gray-900 border border-gray-800 text-red-500 px-2 py-0.5 rounded uppercase">
                     API v2.1-NET
                   </span>
                 </div>
@@ -2097,7 +2097,7 @@ Roberto Santos de Araujo`;
                     ) : (
                       <div className="space-y-1">
                         {syncLogs.map((log, idx) => (
-                          <div key={idx} className={log.startsWith('✔') ? 'text-emerald-400 font-bold' : 'text-amber-500'}>
+                          <div key={idx} className={log.startsWith('✔') ? 'text-emerald-400 font-bold' : 'text-red-500'}>
                             [{new Date().toLocaleTimeString()}] {log}
                           </div>
                         ))}
@@ -2122,7 +2122,7 @@ Roberto Santos de Araujo`;
                     </span>
                   </div>
                   
-                  <span className="text-xs font-mono font-bold text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded">
+                  <span className="text-xs font-mono font-bold text-red-500 uppercase bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded">
                     {selectedIntegrationSystem === 'sap' && `${sapMappedLocations.length} Mapeados`}
                     {selectedIntegrationSystem === 'totvs' && `${totvsSyncedOS.length} Conciliados`}
                     {selectedIntegrationSystem === 'jira' && `${jiraIssues.length} Ativas`}
@@ -2145,7 +2145,7 @@ Roberto Santos de Araujo`;
                       <tbody className="divide-y divide-gray-850 text-gray-300">
                         {sapMappedLocations.map((loc) => (
                           <tr key={loc.id} className="hover:bg-gray-900/10">
-                            <td className="p-2 font-bold text-amber-500">{loc.id}</td>
+                            <td className="p-2 font-bold text-red-500">{loc.id}</td>
                             <td className="p-2 text-white font-bold">{loc.techLoc}</td>
                             <td className="p-2 text-gray-450">{loc.equipment}</td>
                             <td className="p-2 text-right">
@@ -2173,7 +2173,7 @@ Roberto Santos de Araujo`;
                       <tbody className="divide-y divide-gray-850 text-gray-300">
                         {totvsSyncedOS.map((os) => (
                           <tr key={os.id} className="hover:bg-gray-900/10">
-                            <td className="p-2 font-bold text-amber-500">{os.id}</td>
+                            <td className="p-2 font-bold text-red-500">{os.id}</td>
                             <td className="p-2 text-white font-bold">{os.totvsId}</td>
                             <td className="p-2 text-gray-450">{os.client}</td>
                             <td className="p-2 text-gray-400 font-sans">{os.serviceType}</td>
@@ -2216,7 +2216,7 @@ Roberto Santos de Araujo`;
                               </span>
                             </td>
                             <td className="p-2 text-right">
-                              <span className="text-[9px] bg-amber-500/15 text-amber-500 border border-amber-500/35 px-1.5 py-0.2 rounded uppercase font-sans font-bold">
+                              <span className="text-[9px] bg-red-500/15 text-red-500 border border-red-500/35 px-1.5 py-0.2 rounded uppercase font-sans font-bold">
                                 {issue.status}
                               </span>
                             </td>
@@ -2241,7 +2241,7 @@ Roberto Santos de Araujo`;
                         {msProjectTimeline.map((item, idx) => (
                           <tr key={idx} className="hover:bg-gray-900/10">
                             <td className="p-2 text-white font-bold font-sans">{item.task}</td>
-                            <td className="p-2 text-amber-500 font-sans">{item.mappedItem}</td>
+                            <td className="p-2 text-red-500 font-sans">{item.mappedItem}</td>
                             <td className="p-2 text-gray-400">{item.start}</td>
                             <td className="p-2 text-gray-400">{item.finish}</td>
                             <td className="p-2 text-right">
@@ -2291,8 +2291,8 @@ Roberto Santos de Araujo`;
             {/* Explainer Bento Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
               <div className="p-4 bg-gray-950/60 border border-gray-900 rounded-lg space-y-2">
-                <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                  <Clock className="w-4 h-4 text-amber-500" />
+                <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
+                  <Clock className="w-4 h-4 text-red-500" />
                 </div>
                 <h4 className="text-xs font-bold text-white uppercase tracking-wide font-mono">
                   {language === 'PT' ? 'Regra de Tolerância' : 'Grace Period Rule'}
@@ -2342,7 +2342,7 @@ Roberto Santos de Araujo`;
               <div className="bg-gray-950 border border-gray-900 rounded-xl p-5 space-y-4">
                 <div className="flex justify-between items-center border-b border-gray-900 pb-3">
                   <h4 className="text-xs font-bold text-gray-300 font-mono uppercase tracking-wider flex items-center gap-1.5">
-                    <Receipt className="w-4 h-4 text-amber-500" />
+                    <Receipt className="w-4 h-4 text-red-500" />
                     {language === 'PT' ? 'Livro de Registro de Faturas de Clientes' : 'Client Invoices & Billing Ledger'}
                   </h4>
                   <span className="text-[10px] text-gray-500 font-mono">
@@ -2382,7 +2382,7 @@ Roberto Santos de Araujo`;
 
                           return (
                             <tr key={inv.id} className="hover:bg-gray-900/20">
-                              <td className="p-3 font-bold text-amber-500 font-mono">{inv.id}</td>
+                              <td className="p-3 font-bold text-red-500 font-mono">{inv.id}</td>
                               <td className="p-3">
                                 <div>
                                   <p className="font-bold text-white font-sans">{inv.companyName}</p>
@@ -2400,7 +2400,7 @@ Roberto Santos de Araujo`;
                               <td className="p-3 text-center">
                                 {isOverdue ? (
                                   <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${
-                                    isPastTenDays ? 'bg-red-950 text-red-400 border border-red-500/40' : 'bg-amber-950 text-amber-400'
+                                    isPastTenDays ? 'bg-red-950 text-red-400 border border-red-500/40' : 'bg-red-950 text-red-400'
                                   }`}>
                                     {delayDays} {language === 'PT' ? 'dias' : 'days'}
                                   </span>
@@ -2418,7 +2418,7 @@ Roberto Santos de Araujo`;
                                   <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider flex items-center justify-center gap-1 mx-auto w-16 ${
                                     isPastTenDays 
                                       ? 'bg-red-500/20 text-red-400 border border-red-500 animate-pulse' 
-                                      : 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
+                                      : 'bg-red-500/10 text-red-500 border border-red-500/20'
                                   }`}>
                                     <AlertTriangle className="w-3 h-3" />
                                     {language === 'PT' ? 'ABERTO' : 'DUE'}
@@ -2478,7 +2478,7 @@ Roberto Santos de Araujo`;
                   </table>
                 </div>
 
-                <div className="bg-amber-950/10 border border-amber-900/30 rounded p-3 text-[11px] text-amber-500 font-mono leading-relaxed">
+                <div className="bg-red-950/10 border border-red-900/30 rounded p-3 text-[11px] text-red-500 font-mono leading-relaxed">
                   <strong>💡 {language === 'PT' ? 'Dica de Teste do Simulador:' : 'Developer Test Tip:'}</strong>{' '}
                   {language === 'PT'
                     ? 'Mude o status de pagamento da fatura vencida do cliente "Chevron Corp" para simular a revogação instantânea e automática do bloqueio no Checklist e Databook!'
@@ -2566,7 +2566,7 @@ Roberto Santos de Araujo`;
                               }}
                               className={`w-full py-1.5 text-[10px] font-bold uppercase font-mono rounded transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
                                 co.isManualBlock
-                                  ? 'bg-amber-500 text-black hover:bg-amber-600'
+                                  ? 'bg-red-500 text-black hover:bg-red-600'
                                   : 'bg-red-500/10 text-red-500 hover:bg-red-500/20 border border-red-500/20'
                               }`}
                             >
