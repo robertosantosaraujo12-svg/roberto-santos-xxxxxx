@@ -109,7 +109,7 @@ export default function DatabookView({
       <section className="bg-gray-900/40 p-5 border border-gray-800 rounded-lg space-y-4">
         <div>
           <h2 className="text-base font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-red-500" />
+            <BookOpen className="w-5 h-5 text-orange-500" />
             {t.databookTitle}
           </h2>
           <p className="text-xs text-gray-400">
@@ -139,7 +139,7 @@ export default function DatabookView({
             ) : !showPreview ? (
               <button
                 onClick={() => setShowPreview(true)}
-                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-black text-xs font-bold rounded transition-all cursor-pointer flex items-center gap-1.5 font-mono"
+                className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black text-xs font-bold rounded transition-all cursor-pointer flex items-center gap-1.5 font-mono"
               >
                 <Eye className="w-4 h-4 text-black" />
                 {t.generateBtn}
@@ -171,7 +171,7 @@ export default function DatabookView({
         <div className="space-y-8 bg-gray-950 p-6 border border-gray-800 rounded-xl" id="print-area">
           
           {/* Quick instructions indicator - hidden during standard printing */}
-          <div className="p-3 bg-red-500/10 border border-red-500/30 text-red-500 font-mono text-[10px] sm:text-xs rounded-md print:hidden">
+          <div className="p-3 bg-orange-500/10 border border-orange-500/30 text-orange-500 font-mono text-[10px] sm:text-xs rounded-md print:hidden">
             💡 {language === 'PT' 
               ? 'Área de Visualização de Impressão de Databook do Projeto. Pressione "Imprimir" para gerar documento diagramado com quebras automáticas de página.' 
               : 'Printable engineering blueprint preview. Click "Print" to launch standard Chrome PDF export module.'}
@@ -224,7 +224,7 @@ export default function DatabookView({
                 </div>
                 <div>
                   <p className="text-gray-500">REVISÃO:</p>
-                  <p className="font-bold uppercase text-red-600">{project.revision}</p>
+                  <p className="font-bold uppercase text-orange-600">{project.revision}</p>
                 </div>
               </div>
 
@@ -328,7 +328,7 @@ export default function DatabookView({
                       className="flex justify-between border-b border-dashed border-gray-300 py-1"
                     >
                       <div className="flex items-center gap-1.5 truncate max-w-lg text-black font-semibold">
-                        <span className="text-red-600 font-bold">{item.code}</span>
+                        <span className="text-orange-600 font-bold">{item.code}</span>
                         <span className="truncate">{language === 'PT' ? item.titlePt : item.titleEn}</span>
                       </div>
                       <span className="shrink-0 text-black font-bold">
@@ -358,14 +358,14 @@ export default function DatabookView({
                   {/* Databook sheet title banner */}
                   <div className="border-b-2 border-black pb-3 flex justify-between items-start gap-4">
                     <div>
-                      <span className="text-[10px] text-red-600 font-bold">{item.code} - GESTÃO DE CONFORMIDADE</span>
+                      <span className="text-[10px] text-orange-600 font-bold">{item.code} - GESTÃO DE CONFORMIDADE</span>
                       <h3 className="text-sm font-bold uppercase font-sans text-black mt-1">
                         {language === 'PT' ? item.titlePt : language === 'ES' ? item.titleEs : item.titleEn}
                       </h3>
                     </div>
                     <div className="text-right text-[10px]">
                       <p>DOC REFERÊNCIA</p>
-                      <p className="font-bold text-red-600">{project.docNumber}</p>
+                      <p className="font-bold text-orange-600">{project.docNumber}</p>
                     </div>
                   </div>
 
@@ -447,7 +447,7 @@ export default function DatabookView({
         /* Empty / Standard configuration grid with interactive list selection */
         <section className="bg-[#111827]/40 border border-gray-800 rounded-xl p-6 sm:p-8 text-center font-mono space-y-6">
           <div className="space-y-2">
-            <BookOpen className="w-12 h-12 text-red-500/80 mx-auto animate-pulse" />
+            <BookOpen className="w-12 h-12 text-orange-500/80 mx-auto animate-pulse" />
             <div className="max-w-md mx-auto space-y-2">
               <h3 className="text-sm font-bold text-white uppercase">
                 {language === 'PT' ? 'Dossiê Técnico Customizável' : 'Customizable Technical Dossier'}
@@ -463,7 +463,7 @@ export default function DatabookView({
           {/* Custom Selection Panel */}
           <div className="border border-gray-800 rounded-lg p-4 bg-gray-950/50 max-w-2xl mx-auto text-left space-y-3 font-sans">
             <div className="flex justify-between items-center border-b border-gray-800 pb-2">
-              <span className="text-xs font-bold text-red-500 uppercase tracking-wider font-mono">
+              <span className="text-xs font-bold text-orange-500 uppercase tracking-wider font-mono">
                 {language === 'PT' ? 'Documentos Pertinentes para Emissão' : 'Pertinent Documents for Issuance'}
               </span>
               <span className="text-[10px] text-gray-400 font-mono bg-gray-900 px-2 py-0.5 rounded border border-gray-800">
@@ -486,7 +486,7 @@ export default function DatabookView({
                       key={item.id} 
                       className={`flex items-start gap-2.5 p-2 rounded border transition cursor-pointer select-none ${
                         isChecked
-                          ? 'bg-red-500/10 border-red-500/30 text-white'
+                          ? 'bg-orange-500/10 border-orange-500/30 text-white'
                           : 'bg-gray-900/30 border-gray-800/60 text-gray-500 hover:text-gray-400'
                       }`}
                     >
@@ -499,10 +499,10 @@ export default function DatabookView({
                             [item.id]: !prev[item.id]
                           }));
                         }}
-                        className="mt-0.5 rounded border-gray-700 text-red-500 focus:ring-red-500 focus:ring-offset-gray-950 bg-gray-950 cursor-pointer"
+                        className="mt-0.5 rounded border-gray-700 text-orange-500 focus:ring-orange-500 focus:ring-offset-gray-950 bg-gray-950 cursor-pointer"
                       />
                       <div className="text-xs leading-tight">
-                        <span className="font-mono font-bold text-red-500 text-[10px] block">{item.code}</span>
+                        <span className="font-mono font-bold text-orange-500 text-[10px] block">{item.code}</span>
                         <span className="line-clamp-1 text-[11px] font-medium">{language === 'PT' ? item.titlePt : item.titleEn}</span>
                       </div>
                     </label>
@@ -533,7 +533,7 @@ export default function DatabookView({
             className={`px-4 py-2 text-xs font-bold rounded cursor-pointer mt-2 transition-all ${
               databookItems.length === 0 
                 ? 'bg-gray-800 text-gray-500 cursor-not-allowed border border-gray-700'
-                : 'bg-red-500 hover:bg-red-600 text-black shadow-lg hover:shadow-red-500/10'
+                : 'bg-orange-500 hover:bg-orange-600 text-black shadow-lg hover:shadow-orange-500/10'
             }`}
           >
             {t.generateBtn}
