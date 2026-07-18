@@ -3,10 +3,10 @@
  */
 
 export enum ChecklistStatus {
-  PENDING = 'PENDING',        // Amarelo / Yellow
+  PENDING = 'PENDING',        // Amarelo / Orange
   ANALYSIS = 'ANALYSIS',      // Branco / Grayish-White
-  REJECTED = 'REJECTED',      // Vermelho / Yellow
-  NOT_APPLICABLE = 'NOT_APPLICABLE', // Azul / Yellow
+  REJECTED = 'REJECTED',      // Vermelho / Orange
+  NOT_APPLICABLE = 'NOT_APPLICABLE', // Azul / Orange
   APPROVED = 'APPROVED'       // Verde / Green
 }
 
