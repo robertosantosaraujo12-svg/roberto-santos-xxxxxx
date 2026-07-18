@@ -87,7 +87,7 @@ export default function CrmView({
       <section className="bg-gray-900/40 p-4 border border-gray-800 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-base font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
-            <HeartHandshake className="w-5 h-5 text-blue-500 animate-pulse" />
+            <HeartHandshake className="w-5 h-5 text-yellow-500 animate-pulse" />
             {t.crmTitle}
           </h2>
           <p className="text-xs text-gray-400">
@@ -99,7 +99,7 @@ export default function CrmView({
 
         <button
           onClick={() => setIsAddingContact(!isAddingContact)}
-          className="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-black text-xs font-semibold rounded flex items-center gap-1 cursor-pointer"
+          className="px-3 py-1.5 bg-yellow-500 hover:bg-yellow-600 text-black text-xs font-semibold rounded flex items-center gap-1 cursor-pointer"
         >
           <Plus className="w-4 h-4 text-black" />
           {t.crmAddContact}
@@ -114,8 +114,8 @@ export default function CrmView({
           
           {/* Add contact Form */}
           {isAddingContact && (
-            <form onSubmit={handleAddContactSubmit} className="bg-gray-900/60 border border-blue-500/50 p-5 rounded-lg space-y-4">
-              <h3 className="text-xs font-bold text-blue-500 font-mono uppercase">
+            <form onSubmit={handleAddContactSubmit} className="bg-gray-900/60 border border-yellow-500/50 p-5 rounded-lg space-y-4">
+              <h3 className="text-xs font-bold text-yellow-500 font-mono uppercase">
                 {language === 'PT' ? 'Novo Registro de Contato CRM' : 'Register New CRM Stakeholder'}
               </h3>
               
@@ -188,7 +188,7 @@ export default function CrmView({
                 </button>
                 <button
                   type="submit"
-                  className="px-3 py-1 bg-blue-500 hover:bg-blue-600 rounded text-black font-semibold animate-pulse"
+                  className="px-3 py-1 bg-yellow-500 hover:bg-yellow-600 rounded text-black font-semibold animate-pulse"
                 >
                   {language === 'PT' ? 'Salvar Contato' : 'Save Contact'}
                 </button>
@@ -207,7 +207,7 @@ export default function CrmView({
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="text-xs font-bold text-white font-sans">{contact.name}</h4>
-                    <p className="text-[10px] text-blue-500/90 mt-0.5 flex items-center gap-1 font-sans">
+                    <p className="text-[10px] text-yellow-500/90 mt-0.5 flex items-center gap-1 font-sans">
                       <Briefcase className="w-3 h-3" />
                       {contact.role}
                     </p>
@@ -222,14 +222,14 @@ export default function CrmView({
                   
                   {contact.phone && (
                     <a href={`tel:${contact.phone}`} className="flex items-center gap-1.5 text-gray-400 hover:text-white transition">
-                      <Phone className="w-3 h-3 text-blue-500" />
+                      <Phone className="w-3 h-3 text-yellow-500" />
                       <span>{contact.phone}</span>
                     </a>
                   )}
 
                   {contact.email && (
                     <a href={`mailto:${contact.email}`} className="flex items-center gap-1.5 text-gray-400 hover:text-white transition truncate">
-                      <Mail className="w-3 h-3 text-blue-500" />
+                      <Mail className="w-3 h-3 text-yellow-500" />
                       <span className="truncate">{contact.email}</span>
                     </a>
                   )}
@@ -251,7 +251,7 @@ export default function CrmView({
         <div className="lg:col-span-5 bg-gray-900/20 border border-gray-850 p-5 rounded-lg space-y-4">
           
           <h3 className="text-xs font-bold text-white font-mono uppercase tracking-wide flex items-center gap-1.5 border-b border-gray-800 pb-2">
-            <MessageSquare className="w-4 h-4 text-blue-500" />
+            <MessageSquare className="w-4 h-4 text-yellow-500" />
             {t.crmLogs}
           </h3>
 
@@ -294,7 +294,7 @@ export default function CrmView({
                     type="button"
                     onClick={() => setLogType(type.id as any)}
                     className={`px-2 py-1 ${
-                      logType === type.id ? 'bg-blue-500 text-black font-bold' : 'text-gray-400 hover:text-white'
+                      logType === type.id ? 'bg-yellow-500 text-black font-bold' : 'text-gray-400 hover:text-white'
                     }`}
                   >
                     {type.label}
@@ -304,7 +304,7 @@ export default function CrmView({
 
               <button
                 type="submit"
-                className="px-2.5 py-1 bg-blue-500 hover:bg-blue-600 text-black text-xs font-bold rounded flex items-center gap-1 cursor-pointer transition-all active:scale-95"
+                className="px-2.5 py-1 bg-yellow-500 hover:bg-yellow-600 text-black text-xs font-bold rounded flex items-center gap-1 cursor-pointer transition-all active:scale-95"
               >
                 <Send className="w-3 h-3 text-black" />
                 <span>{t.addLog}</span>
@@ -321,7 +321,7 @@ export default function CrmView({
                 className="relative pl-4 border-l-2 border-gray-800 font-mono text-xs space-y-1"
               >
                 {/* Node dot sign */}
-                <span className="absolute -left-1.5 top-1 w-2.5 h-2.5 rounded-full bg-blue-500 border border-[#0a0f18] animate-pulse" />
+                <span className="absolute -left-1.5 top-1 w-2.5 h-2.5 rounded-full bg-yellow-500 border border-[#0a0f18] animate-pulse" />
                 
                 <div className="flex justify-between items-center">
                   <span className="font-bold text-gray-200">{act.title}</span>
@@ -333,7 +333,7 @@ export default function CrmView({
 
                 <p className="text-gray-400 text-xs font-sans leading-relaxed">{act.description}</p>
                 
-                <p className="text-[9px] text-blue-500/70">
+                <p className="text-[9px] text-yellow-500/70">
                   ⚡ Ref: {act.user} | Tag: <span className="uppercase font-semibold">{act.type}</span>
                 </p>
               </div>
