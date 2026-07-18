@@ -25,7 +25,7 @@ jobs:
 
           git fetch origin
 
-          git checkout production
-          git merge origin/main --no-edit -X ours
+git checkout production
+git merge origin/main --no-edit
 
-          git push origin production
+git push origin production
