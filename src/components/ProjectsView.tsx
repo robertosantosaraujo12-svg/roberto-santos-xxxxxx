@@ -90,7 +90,7 @@ export default function ProjectsView({
       <div className="flex justify-between items-center bg-gray-900/40 p-4 border border-gray-800 rounded-lg">
         <div>
           <h2 className="text-base font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
-            <FolderGit2 className="w-5 h-5 text-orange-500" />
+            <FolderGit2 className="w-5 h-5 text-blue-500" />
             {t.projectList}
           </h2>
           <p className="text-xs text-gray-400">{language === 'PT' ? 'Gerencie as capas e contra-capas dos projetos de engenharia' : 'Manage quality sheets of Oil & Gas engineering programs'}</p>
@@ -98,7 +98,7 @@ export default function ProjectsView({
 
         <button
           onClick={() => setIsAdding(!isAdding)}
-          className="px-3 py-1.5 bg-orange-500 hover:bg-orange-600 text-black text-xs font-semibold rounded transition flex items-center gap-1 cursor-pointer"
+          className="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-black text-xs font-semibold rounded transition flex items-center gap-1 cursor-pointer"
         >
           <Plus className="w-4 h-4 text-black" />
           {t.newProject}
@@ -106,9 +106,9 @@ export default function ProjectsView({
       </div>
 
       {isAdding && (
-        <form onSubmit={handleSubmit} className="bg-gray-900/60 border border-orange-500/50 rounded-lg p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="bg-gray-900/60 border border-blue-500/50 rounded-lg p-6 space-y-4">
           <div className="border-b border-gray-800 pb-2">
-            <h3 className="text-sm font-bold text-orange-500 font-mono uppercase tracking-wide">
+            <h3 className="text-sm font-bold text-blue-500 font-mono uppercase tracking-wide">
               {language === 'PT' ? 'Informações da Ficha (Capa & Contra Capa)' : 'Project Quality Setup Sheet'}
             </h3>
             <p className="text-[11px] text-gray-500">{language === 'PT' ? 'Preencha os dados primários de certificação técnica.' : 'Enter certified quality credentials.'}</p>
@@ -125,7 +125,7 @@ export default function ProjectsView({
                 placeholder="Ex: Refinaria REDUC - Manutenção Setor B"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               />
             </div>
 
@@ -135,7 +135,7 @@ export default function ProjectsView({
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               >
                 <option value="Inspeção">{language === 'PT' ? 'Inspeção' : 'Inspection'}</option>
                 <option value="Manutenção">{language === 'PT' ? 'Manutenção' : 'Maintenance'}</option>
@@ -150,7 +150,7 @@ export default function ProjectsView({
                 required
                 value={client}
                 onChange={(e) => setClient(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               >
                 <option value="">{language === 'PT' ? '-- Escolha o Cliente --' : '-- Select Client --'}</option>
                 {companies.filter(c => c.id !== 'master').map(c => (
@@ -167,7 +167,7 @@ export default function ProjectsView({
                 placeholder="CTR-OG-8812-B"
                 value={contract}
                 onChange={(e) => setContract(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               />
             </div>
 
@@ -179,7 +179,7 @@ export default function ProjectsView({
                 placeholder="Nome do Engenheiro (Ex: CREA RJ 124559)"
                 value={techResponsible}
                 onChange={(e) => setTechResponsible(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               />
             </div>
 
@@ -191,7 +191,7 @@ export default function ProjectsView({
                 placeholder="DOC-REP-QMS-4001"
                 value={docNumber}
                 onChange={(e) => setDocNumber(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               />
             </div>
 
@@ -203,7 +203,7 @@ export default function ProjectsView({
                 placeholder="Ex: Área 42 - Hidrocarbonetos"
                 value={area}
                 onChange={(e) => setArea(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               />
             </div>
 
@@ -215,7 +215,7 @@ export default function ProjectsView({
                 placeholder="Dossier Geral de Qualidade de Spools"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               />
             </div>
 
@@ -227,7 +227,7 @@ export default function ProjectsView({
                 placeholder="OS-7001229"
                 value={orderNumber}
                 onChange={(e) => setOrderNumber(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               />
             </div>
 
@@ -239,7 +239,7 @@ export default function ProjectsView({
                 placeholder="Rev. 0"
                 value={revision}
                 onChange={(e) => setRevision(e.target.value)}
-                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                className="w-full bg-[#111827] border border-gray-700 rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500"
               />
             </div>
 
@@ -255,7 +255,7 @@ export default function ProjectsView({
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black text-xs font-semibold rounded transition"
+              className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-black text-xs font-semibold rounded transition"
             >
               {t.createProjectBtn}
             </button>
@@ -274,14 +274,14 @@ export default function ProjectsView({
             <div 
               key={proj.id}
               className={`bg-gray-905 bg-gray-900/60 border rounded-xl overflow-hidden shadow-lg transition-all ${
-                activeProject?.id === proj.id ? 'border-orange-500 ring-1 ring-orange-500/25' : 'border-gray-800'
+                activeProject?.id === proj.id ? 'border-blue-500 ring-1 ring-blue-500/25' : 'border-gray-800'
               }`}
             >
               
               {/* Header card banner */}
               <div className="bg-[#111827] p-4 border-b border-gray-800 flex justify-between items-start gap-4">
                 <div>
-                  <span className="text-[10px] bg-orange-500/10 text-orange-400 border border-orange-500/20 px-1.5 py-0.5 rounded font-mono uppercase">
+                  <span className="text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 px-1.5 py-0.5 rounded font-mono uppercase">
                     {proj.category}
                   </span>
                   <h3 className="text-sm font-bold text-white mt-1.5 leading-tight">{proj.name}</h3>
@@ -294,7 +294,7 @@ export default function ProjectsView({
                       onDeleteProject(proj.id);
                     }
                   }}
-                  className="p-1 hover:bg-orange-950/20 text-gray-500 hover:text-orange-400 rounded transition"
+                  className="p-1 hover:bg-blue-950/20 text-gray-500 hover:text-blue-400 rounded transition"
                   title="Excluir Projeto"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -304,25 +304,25 @@ export default function ProjectsView({
               {/* Specs grid */}
               <div className="p-4 grid grid-cols-2 gap-x-4 gap-y-3 text-xs text-gray-300 font-mono">
                 <div className="flex items-center gap-1.5 text-gray-400 truncate">
-                  <User className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                  <User className="w-3.5 h-3.5 text-blue-500 shrink-0" />
                   <span className="text-gray-500">Cliente:</span>
                   <span className="text-gray-300 select-all font-sans">{proj.client}</span>
                 </div>
                 
                 <div className="flex items-center gap-1.5 text-gray-400 truncate">
-                  <FileSpreadsheet className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                  <FileSpreadsheet className="w-3.5 h-3.5 text-blue-500 shrink-0" />
                   <span className="text-gray-500">CONTR:</span>
                   <span className="text-gray-300">{proj.contract || 'N/A'}</span>
                 </div>
 
                 <div className="flex items-center gap-1.5 text-gray-400 truncate col-span-2">
-                  <Layers className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                  <Layers className="w-3.5 h-3.5 text-blue-500 shrink-0" />
                   <span className="text-gray-500">Doc Ref:</span>
                   <span className="text-gray-300 select-all">{proj.docNumber}</span>
                 </div>
 
                 <div className="flex items-center gap-1.5 text-gray-400 truncate col-span-2 font-sans">
-                  <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 text-blue-500 shrink-0" />
                   <span className="text-gray-500">Área:</span>
                   <span className="text-gray-300 truncate">{proj.area || 'N/A'}</span>
                 </div>
@@ -338,7 +338,7 @@ export default function ProjectsView({
                   
                   <button
                     onClick={() => onSelectProject(proj)}
-                    className="px-3 py-1.5 bg-orange-500 hover:bg-orange-600 text-black text-[11px] font-bold rounded-md flex items-center gap-1 transition"
+                    className="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-black text-[11px] font-bold rounded-md flex items-center gap-1 transition"
                   >
                     <Eye className="w-3.5 h-3.5 text-black" />
                     {t.details}
