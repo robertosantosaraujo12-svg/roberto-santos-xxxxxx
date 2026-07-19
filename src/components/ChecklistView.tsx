@@ -85,13 +85,13 @@ export default function ChecklistView({
   const getStatusColor = (status: ChecklistStatus) => {
     switch (status) {
       case ChecklistStatus.PENDING: 
-        return 'bg-orange-500/20 text-orange-400 border-orange-500/40'; // Amarelo
+        return 'bg-cyan-500/20 text-cyan-400 border-cyan-500/40'; // Amarelo
       case ChecklistStatus.ANALYSIS: 
         return 'bg-slate-300/10 text-white border-slate-300/30'; // Branco / Cinza
       case ChecklistStatus.REJECTED: 
         return 'bg-[#ef4444]/20 text-[#ef4444] border-[#ef4444]/40'; // Vermelho
       case ChecklistStatus.NOT_APPLICABLE: 
-        return 'bg-orange-500/20 text-orange-400 border-orange-500/40'; // Azul
+        return 'bg-cyan-500/20 text-cyan-400 border-cyan-500/40'; // Azul
       case ChecklistStatus.APPROVED: 
         return 'bg-green-500/20 text-green-400 border-green-500/40'; // Verde
       default: 
@@ -101,10 +101,10 @@ export default function ChecklistView({
 
   const getStatusDotColor = (status: ChecklistStatus) => {
     switch (status) {
-      case ChecklistStatus.PENDING: return 'bg-orange-500';
+      case ChecklistStatus.PENDING: return 'bg-cyan-500';
       case ChecklistStatus.ANALYSIS: return 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]';
       case ChecklistStatus.REJECTED: return 'bg-[#ef4444]';
-      case ChecklistStatus.NOT_APPLICABLE: return 'bg-orange-500';
+      case ChecklistStatus.NOT_APPLICABLE: return 'bg-cyan-500';
       case ChecklistStatus.APPROVED: return 'bg-green-500';
     }
   };
@@ -221,10 +221,10 @@ export default function ChecklistView({
 
       {/* Financial Block Security Warning Banner */}
       {isBlocked && (
-        <div className="bg-orange-500/10 border-2 border-orange-500 rounded-xl p-5 flex flex-col md:flex-row gap-4 items-start md:items-center text-left">
-          <AlertTriangle className="w-10 h-10 text-orange-500 shrink-0 animate-pulse" />
+        <div className="bg-cyan-500/10 border-2 border-cyan-500 rounded-xl p-5 flex flex-col md:flex-row gap-4 items-start md:items-center text-left">
+          <AlertTriangle className="w-10 h-10 text-cyan-500 shrink-0 animate-pulse" />
           <div className="space-y-1">
-            <h4 className="text-sm font-bold font-mono text-orange-400 uppercase tracking-wider">
+            <h4 className="text-sm font-bold font-mono text-cyan-400 uppercase tracking-wider">
               {language === 'PT' ? '⚠️ EMISSÃO DE DOCUMENTOS SUSPENSA POR MEDIDA DE SEGURANÇA' : '⚠️ DOCUMENT EMISSION SUSPENDED FOR ACCOUNT COMPLIANCE'}
             </h4>
             <p className="text-xs text-gray-300 font-sans leading-relaxed">
@@ -233,7 +233,7 @@ export default function ChecklistView({
                 : 'This customer is currently restricted due to pending invoices past due for more than 10 days. All new file uploads, digital signatures, and technical certifications are blocked.')}
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1 pt-1.5 font-mono text-[10px]">
-              <span className="text-orange-400 font-bold uppercase">
+              <span className="text-cyan-400 font-bold uppercase">
                 {language === 'PT' ? 'Status: BLOQUEIO ATIVO' : 'Status: RESTRICTION ACTIVE'}
               </span>
               <span className="text-gray-500">|</span>
@@ -247,10 +247,10 @@ export default function ChecklistView({
       
       {/* Active project details banner */}
       <section className="bg-gradient-to-r from-gray-900 to-gray-950 p-5 border border-gray-800 rounded-xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-40 h-40 bg-orange-500/5 rounded-full filter blur-3xl" />
+        <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl" />
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 font-mono">
           <div>
-            <span className="text-[10px] text-orange-500 uppercase font-semibold">
+            <span className="text-[10px] text-cyan-500 uppercase font-semibold">
               {language === 'PT' ? 'Dossier Técnico Ativo' : 'Active Technical Register Dossier'}
             </span>
             <h2 className="text-lg font-bold text-white mt-1 font-sans">{project.name}</h2>
@@ -260,7 +260,7 @@ export default function ChecklistView({
           </div>
           <div className="flex flex-wrap gap-2 text-[11px] bg-gray-900/80 p-3 rounded-lg border border-gray-800/80">
             <div><span className="text-gray-500">Doc:</span> <span className="text-gray-300 font-bold">{project.docNumber}</span></div>
-            <div className="border-l border-gray-800 pl-2"><span className="text-gray-500">Rev:</span> <span className="text-orange-500 font-bold">{project.revision}</span></div>
+            <div className="border-l border-gray-800 pl-2"><span className="text-gray-500">Rev:</span> <span className="text-cyan-500 font-bold">{project.revision}</span></div>
             <div className="border-l border-gray-800 pl-2"><span className="text-gray-500">OS:</span> <span className="text-gray-300 font-bold">{project.orderNumber}</span></div>
           </div>
         </div>
@@ -272,11 +272,11 @@ export default function ChecklistView({
           onClick={() => setChecklistActiveSubTab('matrix')}
           className={`px-4 py-2 text-xs font-bold font-mono uppercase tracking-wider border-b-2 transition-all flex items-center gap-1.5 cursor-pointer ${
             checklistActiveSubTab === 'matrix'
-              ? 'border-orange-500 text-white font-extrabold'
+              ? 'border-cyan-500 text-white font-extrabold'
               : 'border-transparent text-gray-500 hover:text-gray-350'
           }`}
         >
-          <CheckSquare className="w-3.5 h-3.5 text-orange-500" />
+          <CheckSquare className="w-3.5 h-3.5 text-cyan-500" />
           <span>{language === 'PT' ? 'Ficha de Verificação' : language === 'ES' ? 'Ficha de Verificación' : 'Verification Ledger'}</span>
         </button>
 
@@ -284,11 +284,11 @@ export default function ChecklistView({
           onClick={() => setChecklistActiveSubTab('procedures')}
           className={`px-4 py-2 text-xs font-bold font-mono uppercase tracking-wider border-b-2 transition-all flex items-center gap-1.5 cursor-pointer ${
             checklistActiveSubTab === 'procedures'
-              ? 'border-orange-500 text-white font-extrabold'
+              ? 'border-cyan-500 text-white font-extrabold'
               : 'border-transparent text-gray-500 hover:text-gray-350'
           }`}
         >
-          <BookOpen className="w-3.5 h-3.5 text-orange-500" />
+          <BookOpen className="w-3.5 h-3.5 text-cyan-500" />
           <span>{language === 'PT' ? 'Procedimentos de Inspeção' : language === 'ES' ? 'Procedimientos de Inspección' : 'Inspection Procedures'}</span>
         </button>
       </div>
@@ -327,20 +327,20 @@ export default function ChecklistView({
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={language === 'PT' ? 'Filtre por código ou nome do documento...' : 'Search checklist documents...'}
-              className="w-full bg-[#111827] border border-gray-750 focus:border-orange-500 rounded pl-9 pr-3 py-2 text-xs text-white focus:outline-none placeholder-gray-500"
+              className="w-full bg-[#111827] border border-gray-750 focus:border-cyan-500 rounded pl-9 pr-3 py-2 text-xs text-white focus:outline-none placeholder-gray-500"
             />
           </div>
 
           {/* STATUS FILTER */}
           <div className="flex items-center gap-2">
             <span className="text-xs text-gray-500 font-mono flex items-center gap-1">
-              <Filter className="w-3.5 h-3.5 text-orange-500" />
+              <Filter className="w-3.5 h-3.5 text-cyan-500" />
               {language === 'PT' ? 'Estado' : 'Status'}:
             </span>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="bg-[#111827] border border-gray-750 text-xs text-gray-300 rounded p-1.5 focus:outline-none focus:border-orange-500 cursor-pointer"
+              className="bg-[#111827] border border-gray-750 text-xs text-gray-300 rounded p-1.5 focus:outline-none focus:border-cyan-500 cursor-pointer"
             >
               <option value="ALL">-- {language === 'PT' ? 'Todos os Status' : 'All Statuses'} --</option>
               <option value={ChecklistStatus.APPROVED}>{t.approved}</option>
@@ -366,7 +366,7 @@ export default function ChecklistView({
               onClick={() => setSelectedCategory(cat.id as any)}
               className={`px-3 py-1 rounded text-xs transition font-semibold cursor-pointer ${
                 selectedCategory === cat.id
-                  ? 'bg-orange-500 text-black font-bold'
+                  ? 'bg-cyan-500 text-black font-bold'
                   : 'bg-[#111827]/80 text-gray-400 hover:text-white hover:bg-[#111827]'
               }`}
             >
@@ -403,12 +403,12 @@ export default function ChecklistView({
                   <tr 
                     key={item.id} 
                     className={`hover:bg-[#111827]/60 transition ${
-                      selectedItemId === item.id ? 'bg-orange-950/10' : ''
+                      selectedItemId === item.id ? 'bg-cyan-950/10' : ''
                     }`}
                   >
                     
                     {/* Item Code */}
-                    <td className="py-3 px-4 font-mono text-xs text-orange-500/90 font-bold">{item.code}</td>
+                    <td className="py-3 px-4 font-mono text-xs text-cyan-500/90 font-bold">{item.code}</td>
                     
                     {/* Item Title in selected language */}
                     <td className="py-3 px-4">
@@ -469,7 +469,7 @@ export default function ChecklistView({
                                   ? 'opacity-40 cursor-not-allowed' 
                                   : 'hover:bg-gray-800 cursor-pointer'
                               } ${
-                                item.status === st ? 'bg-orange-500/20 text-orange-500' : 'text-gray-500'
+                                item.status === st ? 'bg-cyan-500/20 text-cyan-500' : 'text-gray-500'
                               }`}
                               title={isBlocked ? (language === 'PT' ? 'Suspenso por inadimplência' : 'Suspended') : (st === ChecklistStatus.APPROVED ? t.approved : st === ChecklistStatus.ANALYSIS ? t.analysis : st === ChecklistStatus.REJECTED ? t.rejected : t.notApplicable)}
                             >
@@ -492,9 +492,9 @@ export default function ChecklistView({
                         <label className={`p-2 border rounded text-xs font-semibold transition flex items-center gap-1.5 ${
                           isBlocked 
                             ? 'bg-gray-900/50 border-gray-850 text-gray-500 cursor-not-allowed opacity-40' 
-                            : 'bg-orange-500/10 border-orange-500/20 hover:bg-orange-500/20 hover:border-orange-500/40 text-orange-500 cursor-pointer'
+                            : 'bg-cyan-500/10 border-cyan-500/20 hover:bg-cyan-500/20 hover:border-cyan-500/40 text-cyan-500 cursor-pointer'
                         }`}>
-                          <Upload className={`w-3.5 h-3.5 ${isBlocked ? 'text-gray-600' : 'text-orange-500'}`} />
+                          <Upload className={`w-3.5 h-3.5 ${isBlocked ? 'text-gray-600' : 'text-cyan-500'}`} />
                           <span>{language === 'PT' ? 'Fazer Upload' : 'Upload File'}</span>
                           <input
                             type="file"
@@ -542,7 +542,7 @@ export default function ChecklistView({
             
             <div className="flex justify-between items-start border-b border-gray-800 pb-3 mb-4">
               <div>
-                <span className="text-[10px] text-orange-500 font-mono font-bold uppercase">{selectedItem.code}</span>
+                <span className="text-[10px] text-cyan-500 font-mono font-bold uppercase">{selectedItem.code}</span>
                 <h3 className="text-base font-bold text-white font-sans mt-0.5">
                   {language === 'PT' ? selectedItem.titlePt : language === 'ES' ? selectedItem.titleEs : selectedItem.titleEn}
                 </h3>
@@ -557,9 +557,9 @@ export default function ChecklistView({
 
             {/* Financial Block Notice inside Drawer */}
             {isBlocked && (
-              <div className="mb-4 bg-orange-500/10 border-2 border-orange-500 rounded-lg p-4 text-left font-mono">
-                <p className="text-xs font-bold text-orange-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <AlertTriangle className="w-4 h-4 text-orange-500 animate-pulse" />
+              <div className="mb-4 bg-cyan-500/10 border-2 border-cyan-500 rounded-lg p-4 text-left font-mono">
+                <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <AlertTriangle className="w-4 h-4 text-cyan-500 animate-pulse" />
                   {language === 'PT' ? 'OPERERAÇÕES SUSPENSAS POR SEGURANÇA' : 'OPERATIONS SUSPENDED'}
                 </p>
                 <p className="text-[10px] text-gray-300 mt-1 font-sans">
@@ -573,7 +573,7 @@ export default function ChecklistView({
             {/* Existing Saved emission records */}
             <div className="space-y-3 mb-6 bg-gray-950 p-4 border border-gray-850 rounded-lg">
               <h4 className="text-xs font-bold text-gray-400 font-mono uppercase tracking-wide flex items-center gap-1.5">
-                <Layers className="w-4 h-4 text-orange-500" />
+                <Layers className="w-4 h-4 text-cyan-500" />
                 {t.emissionsList}
               </h4>
               
@@ -590,9 +590,9 @@ export default function ChecklistView({
                     >
                       <div className="truncate">
                         <p className="font-semibold text-gray-300 font-mono flex items-center gap-1.5 truncate">
-                          <FileText className="w-3.5 h-3.5 text-orange-500" />
+                          <FileText className="w-3.5 h-3.5 text-cyan-500" />
                           <span>{em.fileName}</span>
-                          <span className="text-[9px] bg-gray-800 text-orange-400 px-1 py-0.2 rounded">{em.revision}</span>
+                          <span className="text-[9px] bg-gray-800 text-cyan-400 px-1 py-0.2 rounded">{em.revision}</span>
                         </p>
                         
                         {/* Signature tag and visual lock indicator */}
@@ -602,8 +602,8 @@ export default function ChecklistView({
                             {t.certifiedBy} {em.signature.inspectorName} ({em.signature.professionalId})
                           </p>
                         ) : (
-                          <p className="text-[9px] text-orange-500 font-mono mt-1 flex items-center gap-1">
-                            <Clock className="w-3 h-3 text-orange-500" />
+                          <p className="text-[9px] text-cyan-500 font-mono mt-1 flex items-center gap-1">
+                            <Clock className="w-3 h-3 text-cyan-500" />
                             {t.notSigned}
                           </p>
                         )}
@@ -617,7 +617,7 @@ export default function ChecklistView({
                         
                         <button
                           onClick={() => onDeleteDocumentEmission(selectedItem.id, em.id)}
-                          className="p-1 text-gray-500 hover:text-orange-400 hover:bg-gray-800 rounded transition"
+                          className="p-1 text-gray-500 hover:text-cyan-400 hover:bg-gray-800 rounded transition"
                           title="Remover emissão"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
@@ -632,7 +632,7 @@ export default function ChecklistView({
 
             {/* FORM FOR ADDING A NEW SAVED REPORT EDITION */}
             <form onSubmit={handleAddEmissionSubmit} className="space-y-4 border-t border-gray-800 pt-4">
-              <h4 className="text-xs font-bold text-orange-500 font-mono uppercase tracking-wide">
+              <h4 className="text-xs font-bold text-cyan-500 font-mono uppercase tracking-wide">
                 {t.newEmission}
               </h4>
 
@@ -699,10 +699,10 @@ export default function ChecklistView({
                     type="checkbox"
                     checked={requiresSignature}
                     onChange={(e) => setRequiresSignature(e.target.checked)}
-                    className="accent-orange-500 w-4 h-4 cursor-pointer"
+                    className="accent-cyan-500 w-4 h-4 cursor-pointer"
                   />
                   <span className="text-xs font-bold text-gray-300 font-mono flex items-center gap-1.5 uppercase">
-                    <Award className="w-4 h-4 text-orange-500 animate-pulse" />
+                    <Award className="w-4 h-4 text-cyan-500 animate-pulse" />
                     {t.signatureValidation}
                   </span>
                 </label>
@@ -772,7 +772,7 @@ export default function ChecklistView({
                                 className={`px-3 py-1.5 text-[11px] font-bold rounded transition-all flex items-center gap-1 ${
                                   isBlocked 
                                     ? 'bg-gray-800 text-gray-500 cursor-not-allowed opacity-50'
-                                    : 'bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 text-black cursor-pointer'
+                                    : 'bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 text-black cursor-pointer'
                                 }`}
                               >
                                 <Lock className="w-3.5 h-3.5" />
@@ -783,7 +783,7 @@ export default function ChecklistView({
 
                           {showPasswordInput && (
                             <div className="p-3 bg-gray-900/80 border border-gray-800 rounded-lg space-y-2">
-                              <label className="block text-[10px] text-orange-500 font-mono uppercase tracking-wider">
+                              <label className="block text-[10px] text-cyan-500 font-mono uppercase tracking-wider">
                                 {language === 'PT' ? 'Confirmar Assinatura Técnica com Senha' : 'Confirm Technical Signature with Password'}
                               </label>
                               <div className="flex gap-2">
@@ -800,7 +800,7 @@ export default function ChecklistView({
                                 <button
                                   type="button"
                                   onClick={handleTriggerSignature}
-                                  className="px-3 py-1 bg-orange-500 hover:bg-orange-600 text-black text-[11px] font-bold rounded transition"
+                                  className="px-3 py-1 bg-cyan-500 hover:bg-cyan-600 text-black text-[11px] font-bold rounded transition"
                                 >
                                   {language === 'PT' ? 'Assinar' : 'Sign'}
                                 </button>
@@ -846,13 +846,13 @@ export default function ChecklistView({
                   disabled={isBlocked || (requiresSignature && !isSigned)}
                   className={`px-4 py-2 text-xs font-bold rounded transition flex items-center gap-1 ${
                     isBlocked
-                      ? 'bg-orange-500/10 text-orange-500 border border-orange-500/30 cursor-not-allowed'
+                      ? 'bg-cyan-500/10 text-cyan-500 border border-cyan-500/30 cursor-not-allowed'
                       : requiresSignature && !isSigned
                         ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                        : 'bg-orange-500 hover:bg-orange-600 text-black cursor-pointer'
+                        : 'bg-cyan-500 hover:bg-cyan-600 text-black cursor-pointer'
                   }`}
                 >
-                  <Check className={`w-4 h-4 ${isBlocked ? 'text-orange-500' : 'text-black'}`} />
+                  <Check className={`w-4 h-4 ${isBlocked ? 'text-cyan-500' : 'text-black'}`} />
                   {isBlocked 
                     ? (language === 'PT' ? 'EMISSÃO BLOQUEADA' : 'EMISSION BLOCKED')
                     : (language === 'PT' ? 'Registrar Emissão' : 'Commit Emission Log')}

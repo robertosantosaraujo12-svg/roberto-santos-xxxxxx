@@ -146,10 +146,10 @@ export default function DashboardView({
     <div className="space-y-6">
       
       {currentUser?.isAdmin && (
-        <section className="bg-gray-950/40 border border-orange-500/20 rounded-xl p-5 sm:p-6 space-y-6">
+        <section className="bg-gray-950/40 border border-cyan-500/20 rounded-xl p-5 sm:p-6 space-y-6">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-gray-800">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-orange-500/10 text-orange-500 rounded-lg border border-orange-500/20">
+              <div className="p-2 bg-cyan-500/10 text-cyan-500 rounded-lg border border-cyan-500/20">
                 <KeyRound className="w-5 h-5 shrink-0" />
               </div>
               <div>
@@ -162,7 +162,7 @@ export default function DashboardView({
               </div>
             </div>
             
-            <div className="flex items-center gap-2 px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded text-[10px] font-mono font-bold text-orange-500">
+            <div className="flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded text-[10px] font-mono font-bold text-cyan-500">
               <ShieldAlert className="w-3.5 h-3.5" />
               <span>{language === 'PT' ? 'MODO ADMINISTRADOR' : 'ADMIN CONTROL'}</span>
             </div>
@@ -175,7 +175,7 @@ export default function DashboardView({
                 <p className="text-[10px] text-gray-400 font-mono uppercase">{language === 'PT' ? 'Clientes Ativos no Sistema' : 'Active Client Entities'}</p>
                 <p className="text-2xl font-bold font-mono text-white mt-1">{totalAdminActiveCompanies}</p>
               </div>
-              <Building2 className="w-8 h-8 text-orange-500/30" />
+              <Building2 className="w-8 h-8 text-cyan-500/30" />
             </div>
 
             <div className="bg-gray-900/40 border border-gray-800 p-4 rounded-lg flex items-center justify-between">
@@ -183,15 +183,15 @@ export default function DashboardView({
                 <p className="text-[10px] text-gray-400 font-mono uppercase">{language === 'PT' ? 'Total de Ordens de Serviço (OS)' : 'Total Work Orders (WO)'}</p>
                 <p className="text-2xl font-bold font-mono text-white mt-1">{totalAdminOSCount}</p>
               </div>
-              <FileText className="w-8 h-8 text-orange-500/30" />
+              <FileText className="w-8 h-8 text-cyan-500/30" />
             </div>
 
-            <div className="bg-gray-900/40 border border-gray-800 p-4 rounded-lg flex items-center justify-between bg-gradient-to-r from-orange-950/10 to-orange-950/10 border-orange-500/20">
+            <div className="bg-gray-900/40 border border-gray-800 p-4 rounded-lg flex items-center justify-between bg-gradient-to-r from-cyan-950/10 to-cyan-950/10 border-cyan-500/20">
               <div>
-                <p className="text-[10px] text-orange-500 font-mono uppercase">{language === 'PT' ? 'Faturamento Líquido Estimado' : 'Total Estimated Accrued Revenue'}</p>
-                <p className="text-2xl font-bold font-mono text-orange-400 mt-1">R$ {totalAdminBilling.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                <p className="text-[10px] text-cyan-500 font-mono uppercase">{language === 'PT' ? 'Faturamento Líquido Estimado' : 'Total Estimated Accrued Revenue'}</p>
+                <p className="text-2xl font-bold font-mono text-cyan-400 mt-1">R$ {totalAdminBilling.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
               </div>
-              <Receipt className="w-8 h-8 text-orange-500/30" />
+              <Receipt className="w-8 h-8 text-cyan-500/30" />
             </div>
           </div>
 
@@ -207,13 +207,13 @@ export default function DashboardView({
                 <div key={comp.id} className="p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:bg-gray-900/20 transition-all">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-orange-500" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-cyan-500" />
                       <span className="text-sm font-bold text-white font-sans">{comp.name}</span>
                       <span className="text-[9px] text-gray-500 bg-gray-900 border border-gray-800 px-1.5 py-0.5 rounded uppercase">{comp.cnpj}</span>
                     </div>
                     
                     <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-gray-400 font-sans">
-                      <span className="font-mono text-[10px] text-orange-500 font-semibold">{comp.osCount} {language === 'PT' ? 'OS Ativa(s)' : 'Active WO(s)'}</span>
+                      <span className="font-mono text-[10px] text-cyan-500 font-semibold">{comp.osCount} {language === 'PT' ? 'OS Ativa(s)' : 'Active WO(s)'}</span>
                       <span>•</span>
                       <span>{comp.approvedItems} {language === 'PT' ? 'itens de metrologia certificados' : 'certified quality items'}</span>
                       <span>•</span>
@@ -225,7 +225,7 @@ export default function DashboardView({
                       <div className="flex flex-wrap gap-1.5 pt-1.5">
                         {comp.osList.map((o, idx) => (
                           <span key={idx} className="text-[9px] bg-gray-900 text-gray-400 border border-gray-800/80 px-2 py-0.5 rounded flex items-center gap-1" title={o.title}>
-                            <Sparkles className="w-2 h-2 text-orange-500" />
+                            <Sparkles className="w-2 h-2 text-cyan-500" />
                             <span>{o.os}</span>
                           </span>
                         ))}
@@ -236,7 +236,7 @@ export default function DashboardView({
                   <div className="flex items-center justify-between w-full md:w-auto gap-4 pt-3 md:pt-0 border-t md:border-t-0 border-gray-850 md:border-none">
                     <div className="text-left md:text-right">
                       <span className="text-[10px] text-gray-500 block">{language === 'PT' ? 'PREVISÃO DE FATURA:' : 'ESTIMATED INVOICE:'}</span>
-                      <span className="text-sm font-bold text-orange-400 font-mono">
+                      <span className="text-sm font-bold text-cyan-400 font-mono">
                         R$ {comp.total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                       </span>
                     </div>
@@ -247,7 +247,7 @@ export default function DashboardView({
                         setIsInvoiceSent(false);
                         setIsInvoiceModalOpen(true);
                       }}
-                      className="px-3 py-1.5 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded text-xs transition-all flex items-center gap-1.5 shadow-md shadow-orange-500/5 cursor-pointer"
+                      className="px-3 py-1.5 bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded text-xs transition-all flex items-center gap-1.5 shadow-md shadow-cyan-500/5 cursor-pointer"
                     >
                       <Receipt className="w-3.5 h-3.5 shrink-0" />
                       <span>{language === 'PT' ? 'Simular Fatura' : 'Simulate Invoice'}</span>
@@ -265,16 +265,16 @@ export default function DashboardView({
         
         {/* KPI: Progress */}
         <div className="bg-gray-900/60 border border-gray-800 rounded-lg p-4 flex flex-col justify-between relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/5 rounded-full filter blur-2xl -mr-6 -mt-6" />
+          <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-full filter blur-2xl -mr-6 -mt-6" />
           <div className="flex justify-between items-start">
             <span className="text-xs font-mono text-gray-400 uppercase tracking-wide">{t.kpiProgress}</span>
-            <Target className="w-4 h-4 text-orange-500 animate-spin" style={{ animationDuration: '6s' }} />
+            <Target className="w-4 h-4 text-cyan-500 animate-spin" style={{ animationDuration: '6s' }} />
           </div>
           <div className="mt-4">
             <span className="text-3xl font-bold text-white font-mono">{inspectionProgress}%</span>
             <div className="h-1.5 w-full bg-gray-800 rounded-full mt-2 overflow-hidden">
               <div 
-                className="h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full transition-all duration-1000"
+                className="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full transition-all duration-1000"
                 style={{ width: `${inspectionProgress}%` }}
               />
             </div>
@@ -301,10 +301,10 @@ export default function DashboardView({
             <span className="text-xs font-mono text-gray-400 uppercase tracking-wide">
               {language === 'PT' ? 'Em Análise Técnico' : language === 'ES' ? 'En Análisis' : 'Under Analysis'}
             </span>
-            <Clock className="w-4 h-4 text-orange-300" />
+            <Clock className="w-4 h-4 text-cyan-300" />
           </div>
           <div className="mt-4">
-            <span className="text-3xl font-bold text-orange-300 font-mono">{analysisCount}</span>
+            <span className="text-3xl font-bold text-cyan-300 font-mono">{analysisCount}</span>
             <p className="text-[10px] text-gray-500 font-mono truncate">
               {language === 'PT' ? 'Aguardando validação' : 'Awaiting compliance Check'}
             </p>
@@ -317,11 +317,11 @@ export default function DashboardView({
             <span className="text-xs font-mono text-gray-400 uppercase tracking-wide">
               {language === 'PT' ? 'Pendentes' : 'Pending'}
             </span>
-            <MinusCircle className="w-4 h-4 text-orange-500/60" />
+            <MinusCircle className="w-4 h-4 text-cyan-500/60" />
           </div>
           <div className="mt-4">
-            <span className="text-3xl font-bold text-orange-500/70 font-mono">{pendingCount}</span>
-            <p className="text-[10px] text-gray-500 font-mono text-orange-400/80 truncate">
+            <span className="text-3xl font-bold text-cyan-500/70 font-mono">{pendingCount}</span>
+            <p className="text-[10px] text-gray-500 font-mono text-cyan-400/80 truncate">
               {language === 'PT' ? 'Não iniciados ainda' : 'Not started yet'}
             </p>
           </div>
@@ -349,7 +349,7 @@ export default function DashboardView({
         {/* Left Side: Quality Donut and Status Metrics */}
         <div className="lg:col-span-1 bg-gray-900/40 border border-gray-800/80 rounded-lg p-5">
           <h3 className="text-sm font-bold text-white uppercase tracking-wide mb-4 font-mono flex items-center gap-2">
-            <Award className="w-4 h-4 text-orange-500" />
+            <Award className="w-4 h-4 text-cyan-500" />
             {language === 'PT' ? 'ÍNDICE DE CONFORMIDADE' : 'COMPLIANCE INDEX'}
           </h3>
 
@@ -371,7 +371,7 @@ export default function DashboardView({
                   cx="80"
                   cy="80"
                   r={radius}
-                  className="stroke-orange-500 transition-all duration-1000"
+                  className="stroke-cyan-500 transition-all duration-1000"
                   strokeWidth={strokeWidth}
                   fill="transparent"
                   strokeDasharray={circ}
@@ -410,30 +410,30 @@ export default function DashboardView({
               </div>
 
               {/* Pending */}
-              <div className="flex justify-between items-center text-xs p-2 bg-orange-950/10 rounded border border-orange-900/20">
+              <div className="flex justify-between items-center text-xs p-2 bg-cyan-950/10 rounded border border-cyan-900/20">
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-orange-500" />
+                  <span className="w-3 h-3 rounded-full bg-cyan-500" />
                   <span className="text-gray-300">{t.pending}</span>
                 </div>
-                <span className="font-mono text-orange-500 font-bold">{pendingCount}</span>
+                <span className="font-mono text-cyan-500 font-bold">{pendingCount}</span>
               </div>
 
               {/* Rejected */}
-              <div className="flex justify-between items-center text-xs p-2 bg-orange-950/10 rounded border border-orange-900/20">
+              <div className="flex justify-between items-center text-xs p-2 bg-cyan-950/10 rounded border border-cyan-900/20">
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-orange-500" />
+                  <span className="w-3 h-3 rounded-full bg-cyan-500" />
                   <span className="text-[#ef4444]">{t.rejected}</span>
                 </div>
-                <span className="font-mono text-orange-400 font-bold">{rejectedCount}</span>
+                <span className="font-mono text-cyan-400 font-bold">{rejectedCount}</span>
               </div>
 
               {/* Not Applicable */}
-              <div className="flex justify-between items-center text-xs p-2 bg-orange-950/10 rounded border border-orange-950/40">
+              <div className="flex justify-between items-center text-xs p-2 bg-cyan-950/10 rounded border border-cyan-950/40">
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-orange-500" />
-                  <span className="text-orange-400">{t.notApplicable}</span>
+                  <span className="w-3 h-3 rounded-full bg-cyan-500" />
+                  <span className="text-cyan-400">{t.notApplicable}</span>
                 </div>
-                <span className="font-mono text-orange-400 font-semibold">{naCount}</span>
+                <span className="font-mono text-cyan-400 font-semibold">{naCount}</span>
               </div>
 
             </div>
@@ -448,12 +448,12 @@ export default function DashboardView({
           <div className="bg-gray-900/40 border border-gray-800/80 rounded-lg p-5">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-sm font-bold text-white uppercase tracking-wide font-mono flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-orange-500 animate-bounce" />
+                <TrendingUp className="w-4 h-4 text-cyan-500 animate-bounce" />
                 {language === 'PT' ? 'CURVA S DE PROGRESSO & CONTROLE DE QUALIDADE' : 'S-CURVE & COMPLIANCE INDEX TRACKING'}
               </h3>
               <div className="flex gap-4 text-xs font-mono">
-                <span className="flex items-center gap-1.5 text-orange-500">
-                  <span className="w-2.5 h-1 bg-orange-500 rounded" />
+                <span className="flex items-center gap-1.5 text-cyan-500">
+                  <span className="w-2.5 h-1 bg-cyan-500 rounded" />
                   {language === 'PT' ? 'Progresso %' : 'Progress %'}
                 </span>
                 <span className="flex items-center gap-1.5 text-teal-400">
@@ -511,7 +511,7 @@ export default function DashboardView({
                         cx={x}
                         cy={yProgress}
                         r={hoveredDataPoint === index ? "7" : "4.5"}
-                        className="fill-orange-500 hover:fill-orange-400 stroke-[#0a0f18] transition-all"
+                        className="fill-cyan-500 hover:fill-cyan-400 stroke-[#0a0f18] transition-all"
                         strokeWidth="2"
                         onMouseEnter={() => setHoveredDataPoint(index)}
                         onMouseLeave={() => setHoveredDataPoint(null)}
@@ -524,13 +524,13 @@ export default function DashboardView({
               {/* Tooltip detail overlay */}
               {hoveredDataPoint !== null && (
                 <div 
-                  className="absolute p-2 bg-[#111827] border border-orange-500 text-[10px] text-gray-200 font-mono rounded"
+                  className="absolute p-2 bg-[#111827] border border-cyan-500 text-[10px] text-gray-200 font-mono rounded"
                   style={{
                     left: `${hoveredDataPoint * 20 + 5}%`,
                     bottom: '40px'
                   }}
                 >
-                  <p className="font-bold text-orange-500">{sCurveData[hoveredDataPoint].month}</p>
+                  <p className="font-bold text-cyan-500">{sCurveData[hoveredDataPoint].month}</p>
                   <p>{language === 'PT' ? 'Fis. Concluído' : 'Work Done'}: <span className="text-white font-bold">{Math.round(sCurveData[hoveredDataPoint].value)}%</span></p>
                   <p>{language === 'PT' ? 'Qualidade Geral' : 'Quality Quotient'}: <span className="text-teal-400 font-bold">{sCurveData[hoveredDataPoint].compliance}%</span></p>
                 </div>
@@ -565,13 +565,13 @@ export default function DashboardView({
                     onClick={() => onSelectProject(proj)}
                     className={`text-left p-3 rounded-lg border transition-all ${
                       activeProject?.id === proj.id
-                        ? 'bg-orange-950/20 border-orange-500/80 shadow'
+                        ? 'bg-cyan-950/20 border-cyan-500/80 shadow'
                         : 'bg-gray-950/40 border-gray-800 hover:border-gray-700'
                     }`}
                   >
                     <div className="flex justify-between items-start">
                       <span className="text-xs font-bold text-gray-200 truncate">{proj.name}</span>
-                      <span className="text-[10px] font-mono bg-gray-800 px-1.5 py-0.5 rounded text-orange-500">
+                      <span className="text-[10px] font-mono bg-gray-800 px-1.5 py-0.5 rounded text-cyan-500">
                         {progressPct}%
                       </span>
                     </div>
@@ -581,7 +581,7 @@ export default function DashboardView({
                     </div>
                     <div className="w-full h-1 bg-gray-800 rounded-full mt-2 overflow-hidden">
                       <div 
-                        className="h-full bg-orange-500" 
+                        className="h-full bg-cyan-500" 
                         style={{ width: `${progressPct}%` }}
                       />
                     </div>
@@ -603,7 +603,7 @@ export default function DashboardView({
             {/* Modal header */}
             <div className="bg-gray-950 px-6 py-4 border-b border-gray-800 flex justify-between items-center shrink-0">
               <div className="flex items-center gap-2">
-                <Receipt className="w-5 h-5 text-orange-500" />
+                <Receipt className="w-5 h-5 text-cyan-500" />
                 <span className="text-sm font-bold text-white uppercase tracking-wider font-mono">
                   {language === 'PT' ? 'Fatura Pro-Forma / Simulação de Cobrança' : 'Pro-Forma Invoice Simulation'}
                 </span>
@@ -630,7 +630,7 @@ export default function DashboardView({
                 <div className="flex flex-col sm:flex-row justify-between items-start gap-4 border-b border-gray-100 pb-6">
                   <div>
                     <div className="flex items-center gap-1.5">
-                      <span className="font-mono text-xl font-black text-orange-600">▲</span>
+                      <span className="font-mono text-xl font-black text-cyan-600">▲</span>
                       <span className="font-sans font-black tracking-tighter text-lg text-gray-900 uppercase">Piramidy Energy Ltd</span>
                     </div>
                     <p className="text-[10px] text-gray-500 font-mono tracking-wider">TECNOLOGIA E GARANTIA DE QUALIDADE EM ÓLEO E GÁS</p>
@@ -638,7 +638,7 @@ export default function DashboardView({
                   </div>
                   <div className="text-left sm:text-right font-mono">
                     <h3 className="text-sm font-bold text-gray-800 tracking-wider uppercase">FATURA PRO-FORMA</h3>
-                    <p className="text-[11px] text-orange-600 font-bold mt-1">#INV-2026-{selectedCompData.id.toUpperCase()}-09</p>
+                    <p className="text-[11px] text-cyan-600 font-bold mt-1">#INV-2026-{selectedCompData.id.toUpperCase()}-09</p>
                     <p className="text-[10px] text-gray-500 mt-1">Data Emissão: 29/06/2026<br />Vencimento: 10/07/2026</p>
                   </div>
                 </div>
@@ -730,9 +730,9 @@ export default function DashboardView({
                       <span>Imposto Retido (ISS 5%):</span>
                       <span>R$ {selectedCompData.tax.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
                     </div>
-                    <div className="flex justify-between text-sm text-gray-900 font-bold border-t border-gray-200 pt-2 bg-orange-50 p-2 rounded">
-                      <span className="text-orange-800">VALOR TOTAL:</span>
-                      <span className="text-orange-950">R$ {selectedCompData.total.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                    <div className="flex justify-between text-sm text-gray-900 font-bold border-t border-gray-200 pt-2 bg-cyan-50 p-2 rounded">
+                      <span className="text-cyan-800">VALOR TOTAL:</span>
+                      <span className="text-cyan-950">R$ {selectedCompData.total.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
                     </div>
                   </div>
                 </div>
@@ -756,7 +756,7 @@ export default function DashboardView({
                       <span>45.109.812/0001-90</span>
                       <button 
                         onClick={() => navigator.clipboard.writeText('45109812000190')}
-                        className="text-[9px] text-orange-600 hover:text-orange-700 font-sans font-bold uppercase ml-2 bg-orange-50 px-1 py-0.5 rounded cursor-pointer"
+                        className="text-[9px] text-cyan-600 hover:text-cyan-700 font-sans font-bold uppercase ml-2 bg-cyan-50 px-1 py-0.5 rounded cursor-pointer"
                       >
                         Copiar Chave
                       </button>
@@ -777,8 +777,8 @@ export default function DashboardView({
                   <span>{language === 'PT' ? 'Fatura emitida e enviada com sucesso para o e-mail financeiro cadastrado!' : 'Invoice successfully emitted and sent to the registered financial email!'}</span>
                 </div>
               ) : (
-                <div className="p-3 bg-orange-500/5 border border-orange-500/20 rounded text-[11px] text-orange-500/80 font-mono text-left flex items-start gap-2 leading-relaxed">
-                  <HelpCircle className="w-4 h-4 shrink-0 mt-0.5 text-orange-500" />
+                <div className="p-3 bg-cyan-500/5 border border-cyan-500/20 rounded text-[11px] text-cyan-500/80 font-mono text-left flex items-start gap-2 leading-relaxed">
+                  <HelpCircle className="w-4 h-4 shrink-0 mt-0.5 text-cyan-500" />
                   <span>
                     {language === 'PT' 
                       ? 'Ao pressionar "Emitir e Enviar para Cliente", o sistema gerará a versão fiscal e enviará uma notificação para o e-mail cadastrado do cliente correspondente.' 
@@ -816,7 +816,7 @@ export default function DashboardView({
                       setIsInvoiceModalOpen(false);
                     }, 3500);
                   }}
-                  className="px-4 py-1.5 bg-orange-500 hover:bg-orange-600 text-black text-xs font-bold rounded transition cursor-pointer flex items-center gap-1.5 shadow-md shadow-orange-500/5"
+                  className="px-4 py-1.5 bg-cyan-500 hover:bg-cyan-600 text-black text-xs font-bold rounded transition cursor-pointer flex items-center gap-1.5 shadow-md shadow-cyan-500/5"
                 >
                   <Receipt className="w-4 h-4 shrink-0" />
                   <span>{language === 'PT' ? 'Emitir e Enviar para Cliente' : 'Emit & Dispatch Invoice'}</span>

@@ -377,7 +377,7 @@ export const INITIAL_CHECKLIST_RAW = [
   { code: 'SUMA-62', titlePt: 'Relatório de Inspeção de Montagem de Escadas e Plataformas', titleEn: 'Ladders & Walkway Structural Inspection', titleEs: 'Montaje de Escaleras y Plataformas', category: 'SUMARIO' },
   { code: 'SUMA-63', titlePt: 'Relatório de Inspeção de Montagem de Bandejas e Internos de Vasos e Torres', titleEn: 'Vessel Trays & Bubble Caps Core Clearance', titleEs: 'Bandejas e Internos de Torres', category: 'SUMARIO' },
   { code: 'SUMA-64', titlePt: 'Relatório de Inspeção de Montagem de Tubulação de Rede Elétrica', titleEn: 'Electrical Conduit Path Rigging Layout', titleEs: 'Montaje Canales Conduit Eléctricos', category: 'SUMARIO' },
-  { code: 'SUMA-65', titlePt: 'Relatório de Inspeção da Malha Elétrica', titleEn: 'Electrical Loop Continuity & Safety tests', titleEs: 'Reporte de Pruebas de Orange Eléctrica', category: 'SUMARIO' },
+  { code: 'SUMA-65', titlePt: 'Relatório de Inspeção da Malha Elétrica', titleEn: 'Electrical Loop Continuity & Safety tests', titleEs: 'Reporte de Pruebas de Cyan Eléctrica', category: 'SUMARIO' },
   { code: 'SUMA-66', titlePt: 'Relatório de Inspeção de Equipamentos e Rede Elétrica', titleEn: 'Electrical Machinery Insulation Testing', titleEs: 'Inspección de Equipos Eléctricos', category: 'SUMARIO' },
   { code: 'SUMA-67', titlePt: 'Relatório de Inspeção da Malha de Instrumentação', titleEn: 'Instrumentation Signal Feedback loop (mA)', titleEs: 'Reporte Lazo de Instrumentación', category: 'SUMARIO' },
   { code: 'SUMA-68', titlePt: 'Relatório de inspeção de Montagem do Sistema de Instrumentação', titleEn: 'Instrument Racks Setup Control', titleEs: 'Montaje del Sistema Instrumentación', category: 'SUMARIO' },
