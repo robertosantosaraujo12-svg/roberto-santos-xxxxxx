@@ -194,9 +194,6 @@ export default function Login({
                       required
                     />
                   </div>
-                  <p className="text-[10px] text-gray-500 font-mono">
-                    * {language === 'PT' ? 'Senha padrão: master2026' : language === 'ES' ? 'Contraseña por defecto: master2026' : 'Default pass: master2026'}
-                  </p>
                 </div>
               ) : (
                 <>
