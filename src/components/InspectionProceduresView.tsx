@@ -115,7 +115,7 @@ const DEFAULT_PROCEDURES: InspectionProcedure[] = [
     ],
     stepsEn: [
       'Clean the target metal area forcefully using approved chemical remover; let dry completely.',
-      'Apply visible violet penetrant over the entire joint and adjacent margins; allow dwell time of 10 to 15 minutes.',
+      'Apply visible orange penetrant over the entire joint and adjacent margins; allow dwell time of 10 to 15 minutes.',
       'Wipe off excess surface penetrant using clean, lint-free cloth dampened with solvent remover.',
       'Spray a thin, even coat of white developer; read final indications within 10 to 30 minutes.'
     ],
@@ -604,10 +604,10 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
   const getCategoryBadgeColor = (type: string) => {
     switch (type) {
       case 'RECEIVING': return 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20';
-      case 'WELDING': return 'bg-violet-500/10 text-violet-400 border-violet-500/20';
-      case 'NDT': return 'bg-violet-500/10 text-violet-400 border-violet-500/20';
+      case 'WELDING': return 'bg-orange-500/10 text-orange-400 border-orange-500/20';
+      case 'NDT': return 'bg-orange-500/10 text-orange-400 border-orange-500/20';
       case 'PRESSURE': return 'bg-green-500/10 text-green-400 border-green-500/20';
-      case 'CIVIL': return 'bg-violet-500/10 text-violet-400 border-violet-500/20';
+      case 'CIVIL': return 'bg-orange-500/10 text-orange-400 border-orange-500/20';
       default: return 'bg-gray-500/10 text-gray-400 border-gray-500/20';
     }
   };
@@ -660,7 +660,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder={uiText.searchPlaceholder}
-            className="w-full bg-[#111827] border border-gray-750 focus:border-violet-500 rounded pl-9 pr-3 py-2 text-xs text-white focus:outline-none placeholder-gray-500"
+            className="w-full bg-[#111827] border border-gray-750 focus:border-orange-500 rounded pl-9 pr-3 py-2 text-xs text-white focus:outline-none placeholder-gray-500"
           />
         </div>
 
@@ -672,7 +672,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
           <select
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
-            className="bg-[#111827] border border-gray-750 text-xs text-gray-300 rounded p-1.5 focus:outline-none focus:border-violet-500 cursor-pointer w-full md:w-auto"
+            className="bg-[#111827] border border-gray-750 text-xs text-gray-300 rounded p-1.5 focus:outline-none focus:border-orange-500 cursor-pointer w-full md:w-auto"
           >
             <option value="ALL">-- {uiText.allTypes} --</option>
             <option value="RECEIVING">{uiText.typeReceiving}</option>
@@ -688,7 +688,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
         <div className="flex gap-2 w-full md:w-auto justify-end">
           <button
             onClick={handleOpenAddModal}
-            className="px-3 py-1.5 bg-violet-500 hover:bg-violet-600 text-black font-semibold text-xs rounded transition flex items-center gap-1.5 cursor-pointer shadow-md shadow-violet-500/5 whitespace-nowrap"
+            className="px-3 py-1.5 bg-orange-500 hover:bg-orange-600 text-black font-semibold text-xs rounded transition flex items-center gap-1.5 cursor-pointer shadow-md shadow-orange-500/5 whitespace-nowrap"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>{uiText.addNewBtn}</span>
@@ -696,7 +696,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
 
           <button
             onClick={handleResetToDefaults}
-            className="p-1.5 bg-gray-900 border border-gray-850 hover:bg-violet-950/20 hover:border-violet-900 hover:text-violet-400 text-gray-500 rounded transition"
+            className="p-1.5 bg-gray-900 border border-gray-850 hover:bg-orange-950/20 hover:border-orange-900 hover:text-orange-400 text-gray-500 rounded transition"
             title={uiText.resetBtn}
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -724,7 +724,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                 key={proc.id} 
                 className={`border rounded-xl transition-all cursor-pointer overflow-hidden ${
                   isExpanded 
-                    ? 'bg-[#111827]/70 border-violet-500/50 shadow-lg shadow-violet-500/5' 
+                    ? 'bg-[#111827]/70 border-orange-500/50 shadow-lg shadow-orange-500/5' 
                     : 'bg-[#111827]/20 border-gray-800 hover:border-gray-750 hover:bg-[#111827]/30'
                 }`}
                 onClick={() => setSelectedProcId(isExpanded ? null : proc.id)}
@@ -735,7 +735,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                   
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-violet-500 font-mono text-xs font-bold bg-violet-500/10 px-2 py-0.5 rounded border border-violet-500/20">
+                      <span className="text-orange-500 font-mono text-xs font-bold bg-orange-500/10 px-2 py-0.5 rounded border border-orange-500/20">
                         {proc.code}
                       </span>
                       <span className="text-[10px] text-gray-400 font-mono">
@@ -779,7 +779,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                     <div className="flex gap-1">
                       {/* Direct upload quick button */}
                       <label 
-                        className="p-2 bg-gray-950 border border-gray-850 hover:border-violet-500/50 hover:bg-violet-500/10 text-gray-400 hover:text-violet-500 rounded transition cursor-pointer"
+                        className="p-2 bg-gray-950 border border-gray-850 hover:border-orange-500/50 hover:bg-orange-500/10 text-gray-400 hover:text-orange-500 rounded transition cursor-pointer"
                         title={uiText.uploadFileBtn}
                         onClick={(e) => e.stopPropagation()}
                       >
@@ -802,7 +802,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
 
                       <button
                         onClick={(e) => handleDeleteProcedure(proc.id, e)}
-                        className="p-2 bg-gray-950 border border-gray-850 hover:border-violet-900 hover:bg-violet-950/20 text-gray-500 hover:text-violet-400 rounded transition"
+                        className="p-2 bg-gray-950 border border-gray-850 hover:border-orange-900 hover:bg-orange-950/20 text-gray-500 hover:text-orange-400 rounded transition"
                         title={uiText.deleteTooltip}
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -820,7 +820,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                     {/* 1 - OBJECTIVE */}
                     <div className="space-y-1.5">
                       <h5 className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
-                        <Info className="w-3.5 h-3.5 text-violet-500" />
+                        <Info className="w-3.5 h-3.5 text-orange-500" />
                         {uiText.objectiveLabel}
                       </h5>
                       <p className="text-xs text-gray-300 font-sans leading-relaxed bg-[#111827]/40 p-3 rounded border border-gray-850/60 font-mono">
@@ -833,13 +833,13 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                       {/* 2 - PROCEDURES STEPS (LIST) */}
                       <div className="space-y-2">
                         <h5 className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
-                          <CheckSquare className="w-3.5 h-3.5 text-violet-500" />
+                          <CheckSquare className="w-3.5 h-3.5 text-orange-500" />
                           {uiText.stepsLabel}
                         </h5>
                         <ol className="space-y-2 text-xs font-mono text-gray-300">
                           {steps.map((st, sIdx) => (
                             <li key={sIdx} className="flex gap-2.5 items-start bg-gray-900/60 p-2.5 rounded border border-gray-850/40">
-                              <span className="w-4 h-4 rounded bg-violet-500/10 text-violet-500 text-[10px] font-bold flex items-center justify-center shrink-0 border border-violet-500/20">
+                              <span className="w-4 h-4 rounded bg-orange-500/10 text-orange-500 text-[10px] font-bold flex items-center justify-center shrink-0 border border-orange-500/20">
                                 {sIdx + 1}
                               </span>
                               <p className="leading-relaxed">{st}</p>
@@ -854,7 +854,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                         {/* Instruments Checklist */}
                         <div className="space-y-2">
                           <h5 className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
-                            <Sliders className="w-3.5 h-3.5 text-violet-500" />
+                            <Sliders className="w-3.5 h-3.5 text-orange-500" />
                             {uiText.instrumentsLabel}
                           </h5>
                           <div className="bg-gray-900/60 p-3 rounded border border-gray-850/40 space-y-1.5">
@@ -874,7 +874,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                         {/* Document Connections log */}
                         <div className="space-y-1.5">
                           <h5 className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
-                            <Layers className="w-3.5 h-3.5 text-violet-500" />
+                            <Layers className="w-3.5 h-3.5 text-orange-500" />
                             {uiText.linkedDocsLabelTitle}
                           </h5>
                           <div className="bg-[#0f1524]/60 p-3 rounded border border-gray-850/60 flex flex-wrap gap-2 items-center">
@@ -885,7 +885,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                               proc.linkedDocs.map(docCode => (
                                 <span 
                                   key={docCode} 
-                                  className="text-[10px] bg-violet-500/10 text-violet-400 border border-violet-500/20 font-mono font-bold px-2 py-0.5 rounded"
+                                  className="text-[10px] bg-orange-500/10 text-orange-400 border border-orange-500/20 font-mono font-bold px-2 py-0.5 rounded"
                                 >
                                   {docCode}
                                 </span>
@@ -902,15 +902,15 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                     <div className="pt-4 border-t border-gray-850 space-y-3">
                       <div className="flex items-center justify-between flex-wrap gap-2">
                         <h5 className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
-                          <Paperclip className="w-3.5 h-3.5 text-violet-500" />
+                          <Paperclip className="w-3.5 h-3.5 text-orange-500" />
                           {uiText.attachmentsTitle}
                         </h5>
                         
                         <label 
-                          className="px-2.5 py-1 bg-violet-500/10 border border-violet-500/25 hover:bg-violet-500/25 text-violet-400 rounded text-[11px] font-semibold transition flex items-center gap-1.5 cursor-pointer"
+                          className="px-2.5 py-1 bg-orange-500/10 border border-orange-500/25 hover:bg-orange-500/25 text-orange-400 rounded text-[11px] font-semibold transition flex items-center gap-1.5 cursor-pointer"
                           onClick={(e) => e.stopPropagation()} // Stop accordion toggling
                         >
-                          <Upload className="w-3 h-3 text-violet-400" />
+                          <Upload className="w-3 h-3 text-orange-400" />
                           <span>{uiText.uploadFileBtn}</span>
                           <input
                             type="file"
@@ -934,7 +934,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                               onClick={(e) => e.stopPropagation()} // Prevent accordion collapsing
                             >
                               <div className="flex items-center gap-2 overflow-hidden">
-                                <FileText className="w-4 h-4 text-violet-500 shrink-0" />
+                                <FileText className="w-4 h-4 text-orange-500 shrink-0" />
                                 <div className="overflow-hidden">
                                   <p className="text-gray-200 font-semibold truncate" title={file.name}>
                                     {file.name}
@@ -948,7 +948,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                               <button
                                 type="button"
                                 onClick={(e) => handleProcedureFileDelete(proc.id, file.id, e)}
-                                className="p-1 text-gray-500 hover:text-violet-400 hover:bg-violet-950/30 rounded transition opacity-0 group-hover:opacity-100 focus:opacity-100"
+                                className="p-1 text-gray-500 hover:text-orange-400 hover:bg-orange-950/30 rounded transition opacity-0 group-hover:opacity-100 focus:opacity-100"
                                 title={uiText.deleteAttachmentTooltip}
                               >
                                 <Trash2 className="w-3.5 h-3.5" />
@@ -975,7 +975,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
             
             <div className="flex justify-between items-center border-b border-gray-800 pb-3 mb-4">
               <div className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-violet-500" />
+                <BookOpen className="w-4 h-4 text-orange-500" />
                 <h3 className="text-sm font-bold text-white uppercase tracking-wider">
                   {modalMode === 'create' ? uiText.addProcTitle : uiText.editProcTitle}
                 </h3>
@@ -999,7 +999,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                     required
                     value={formCode}
                     onChange={(e) => setFormCode(e.target.value.toUpperCase())}
-                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-violet-500"
+                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-orange-500"
                     placeholder="Ex: PROC-QI-E-03"
                   />
                 </div>
@@ -1010,7 +1010,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                     required
                     value={formStandard}
                     onChange={(e) => setFormStandard(e.target.value)}
-                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-violet-500"
+                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-orange-500"
                     placeholder="Ex: ASME V Art. 6"
                   />
                 </div>
@@ -1019,7 +1019,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                   <select
                     value={formType}
                     onChange={(e) => setFormType(e.target.value as any)}
-                    className="w-full bg-gray-950 border border-gray-750 text-xs rounded px-2.5 py-1.5 text-white mt-1 focus:border-violet-500"
+                    className="w-full bg-gray-950 border border-gray-750 text-xs rounded px-2.5 py-1.5 text-white mt-1 focus:border-orange-500"
                   >
                     <option value="RECEIVING">{uiText.typeReceiving}</option>
                     <option value="WELDING">{uiText.typeWelding}</option>
@@ -1040,7 +1040,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                     required
                     value={formTitlePt}
                     onChange={(e) => setFormTitlePt(e.target.value)}
-                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-violet-500"
+                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-orange-500"
                     placeholder="Nome do procedimento em PT"
                   />
                 </div>
@@ -1050,7 +1050,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                     type="text"
                     value={formTitleEn}
                     onChange={(e) => setFormTitleEn(e.target.value)}
-                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-violet-500"
+                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-orange-500"
                     placeholder="Nome do procedimento em EN (opcional)"
                   />
                 </div>
@@ -1060,7 +1060,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                     type="text"
                     value={formTitleEs}
                     onChange={(e) => setFormTitleEs(e.target.value)}
-                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-violet-500"
+                    className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-orange-500"
                     placeholder="Nome do procedimento em ES (opcional)"
                   />
                 </div>
@@ -1068,7 +1068,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
 
               {/* Row 3: Multilanguage objectives */}
               <div className="space-y-3.5 bg-gray-950/40 p-3 rounded-lg border border-gray-850/60">
-                <h4 className="text-[10px] text-violet-500 font-bold uppercase tracking-wider">{uiText.objectiveLabel}</h4>
+                <h4 className="text-[10px] text-orange-500 font-bold uppercase tracking-wider">{uiText.objectiveLabel}</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   <div>
                     <label className="block text-[9px] text-gray-500 uppercase">{uiText.objectivePt}</label>
@@ -1103,7 +1103,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
 
               {/* Row 4: Multilanguage steps (lists textareas) */}
               <div className="space-y-3.5 bg-gray-950/40 p-3 rounded-lg border border-gray-850/60">
-                <h4 className="text-[10px] text-violet-500 font-bold uppercase tracking-wider">{uiText.stepsLabel}</h4>
+                <h4 className="text-[10px] text-orange-500 font-bold uppercase tracking-wider">{uiText.stepsLabel}</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   <div>
                     <label className="block text-[9px] text-gray-500 uppercase">{uiText.stepsPt}</label>
@@ -1141,7 +1141,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
 
               {/* Row 5: Multilanguage Instruments (lists textareas) */}
               <div className="space-y-3.5 bg-gray-950/40 p-3 rounded-lg border border-gray-850/60">
-                <h4 className="text-[10px] text-violet-500 font-bold uppercase tracking-wider">{uiText.instrumentsLabel}</h4>
+                <h4 className="text-[10px] text-orange-500 font-bold uppercase tracking-wider">{uiText.instrumentsLabel}</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   <div>
                     <label className="block text-[9px] text-gray-500 uppercase">{uiText.instrumentsPt}</label>
@@ -1183,7 +1183,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                   type="text"
                   value={formLinkedDocs}
                   onChange={(e) => setFormLinkedDocs(e.target.value)}
-                  className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-violet-500"
+                  className="w-full bg-gray-950 border border-gray-750 rounded px-2.5 py-1.5 text-xs text-white mt-1 focus:border-orange-500"
                   placeholder={uiText.linkedPlaceholder}
                 />
               </div>
@@ -1199,7 +1199,7 @@ export default function InspectionProceduresView({ language }: InspectionProcedu
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-violet-500 hover:bg-violet-600 text-black text-xs font-extrabold rounded flex items-center gap-1 cursor-pointer"
+                  className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black text-xs font-extrabold rounded flex items-center gap-1 cursor-pointer"
                 >
                   <Check className="w-4 h-4 text-black" />
                   {uiText.saveBtn}
