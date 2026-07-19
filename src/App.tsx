@@ -413,7 +413,7 @@ export default function App() {
   const currentUserCompany = companies.find(c => c.id === currentUser.companyId);
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-gray-100 flex flex-col font-sans selection:bg-cyan-500 selection:text-black print:bg-white print:text-black">
+    <div className="min-h-screen bg-[#07090e] text-gray-100 flex flex-col font-sans selection:bg-orange-500 selection:text-black print:bg-white print:text-black">
       
       {/* GLOBAL SYSTEM APP BAR */}
       <header className="bg-[#0b0f19] border-b border-gray-800/80 sticky top-0 z-40 px-4 sm:px-6 py-4 print:hidden">
@@ -421,17 +421,17 @@ export default function App() {
           
           {/* Brand Logo & Name */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-tr from-cyan-500 to-cyan-400 p-[1.5px] rounded-md shadow-lg shadow-cyan-500/5">
+            <div className="w-10 h-10 bg-gradient-to-tr from-orange-500 to-orange-400 p-[1.5px] rounded-md shadow-lg shadow-orange-500/5">
               <div className="w-full h-full bg-[#07090e] flex items-center justify-center rounded-md">
-                <span className="font-mono text-xl font-bold tracking-tighter text-cyan-500">▲</span>
+                <span className="font-mono text-xl font-bold tracking-tighter text-orange-500">▲</span>
               </div>
             </div>
             <div>
               <div className="flex items-center gap-1.5">
                 <h1 className="font-bold text-white tracking-tight text-base sm:text-lg">
-                  PIRAMID <span className="text-cyan-500 text-xs border border-cyan-500/30 px-1 py-0.2 rounded font-mono uppercase">ENERGY GOVERNANCE</span>
+                  PIRAMID <span className="text-orange-500 text-xs border border-orange-500/30 px-1 py-0.2 rounded font-mono uppercase">ENERGY GOVERNANCE</span>
                 </h1>
-                <span className="text-[10px] bg-cyan-500/10 text-cyan-500 border border-cyan-500/20 px-1.5 py-0.2 rounded font-mono uppercase font-bold tracking-wider">
+                <span className="text-[10px] bg-orange-500/10 text-orange-500 border border-orange-500/20 px-1.5 py-0.2 rounded font-mono uppercase font-bold tracking-wider">
                   v2.26
                 </span>
               </div>
@@ -444,7 +444,7 @@ export default function App() {
             
             {/* Display Active Company Tenant */}
             <div className="flex items-center gap-2 bg-gray-950/60 px-3 py-1.5 border border-gray-850 rounded-lg text-xs font-mono">
-              <UserCheck className="w-3.5 h-3.5 text-cyan-500 shrink-0" />
+              <UserCheck className="w-3.5 h-3.5 text-orange-500 shrink-0" />
               <div className="leading-none text-left">
                 <span className="text-[10px] text-gray-500 block">ORGANIZAÇÃO ATIVA:</span>
                 <span className="text-white font-bold truncate max-w-[120px] block">
@@ -460,7 +460,7 @@ export default function App() {
                   key={lang}
                   onClick={() => handleLanguageSwitch(lang)}
                   className={`px-1.5 py-0.5 rounded transition ${
-                    language === lang ? 'bg-cyan-500 text-black font-extrabold' : 'text-gray-400 hover:text-white'
+                    language === lang ? 'bg-orange-500 text-black font-extrabold' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   {lang}
@@ -471,7 +471,7 @@ export default function App() {
             {/* System Reset Button */}
             <button
               onClick={handleSystemReset}
-              className="px-2.5 py-1.5 border border-cyan-500/20 bg-cyan-500/10 text-cyan-500 hover:bg-cyan-500 hover:text-black rounded-lg text-xs font-mono font-bold uppercase transition flex items-center gap-1.5 cursor-pointer"
+              className="px-2.5 py-1.5 border border-orange-500/20 bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-black rounded-lg text-xs font-mono font-bold uppercase transition flex items-center gap-1.5 cursor-pointer"
               title={language === 'PT' ? 'Limpar Cache e Redefinir Sandbox' : 'Reset Sandbox Data'}
             >
               <RefreshCw className="w-3.5 h-3.5" />
@@ -481,7 +481,7 @@ export default function App() {
             {/* Logout anchor */}
             <button
               onClick={handleLogout}
-              className="p-2 border border-gray-800/80 hover:bg-cyan-950/10 text-gray-400 hover:text-cyan-400 rounded-lg transition"
+              className="p-2 border border-gray-800/80 hover:bg-orange-950/10 text-gray-400 hover:text-orange-400 rounded-lg transition"
               title={t.logout}
             >
               <LogOut className="w-4 h-4" />
@@ -512,7 +512,7 @@ export default function App() {
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`py-1.5 px-3 sm:px-4 rounded-md text-xs font-semibold tracking-wide transition-all whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
                   isActive
-                    ? 'bg-cyan-500 text-black font-extrabold shadow-md shadow-cyan-500/10'
+                    ? 'bg-orange-500 text-black font-extrabold shadow-md shadow-orange-500/10'
                     : 'text-gray-400 hover:text-white hover:bg-gray-850'
                 }`}
               >
@@ -547,7 +547,7 @@ export default function App() {
             
             {selectedProject && (
               <span className="text-[10px] text-gray-500 font-mono">
-                Cliente correspondente: <span className="text-cyan-500 font-bold">{selectedProject.client}</span>
+                Cliente correspondente: <span className="text-orange-500 font-bold">{selectedProject.client}</span>
               </span>
             )}
           </div>
