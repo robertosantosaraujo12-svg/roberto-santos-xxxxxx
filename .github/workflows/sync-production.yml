@@ -24,8 +24,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git fetch origin
-
           git checkout production
           git merge origin/main --no-edit
-
           git push origin production
