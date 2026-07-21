@@ -387,96 +387,17 @@ export const INITIAL_CHECKLIST_RAW = [
 ];
 
 export const INITIAL_COMPANIES = [
-  { id: 'master', name: 'PIRAMID Admin', email: 'admin@piramidy.com', isRegistered: true },
-  { id: 'cliente-demo', name: 'Cliente Demonstração S.A.', email: 'qualidade@clientedemo.com.br', isRegistered: true }
+  { id: 'master', name: 'PIRAMID Admin', email: 'admin@piramidy.com', isRegistered: true }
 ];
 
 export const PASSWORDS_MAPPING: Record<string, string> = {
-  'master': 'master2026',
-  'cliente-demo': 'demo123'
+  'master': 'master2026'
 };
 
 export const INITIAL_CONTACTS: CrmContact[] = [
-  { id: 'c1', name: 'Carlos Santos', role: 'Engenheiro de Inspeção Geral', company: 'Cliente Demonstração S.A.', phone: '+55 21 99999-8888', email: 'carlos.santos@clientedemo.com.br', status: 'active' },
-  { id: 'c2', name: 'Mariana Silva', role: 'Coordenadora de Qualidade', company: 'Cliente Demonstração S.A.', phone: '+55 21 98888-7777', email: 'mariana.silva@clientedemo.com.br', status: 'active' },
-  { id: 'c3', name: 'Roberto Santos de Araujo', role: 'Gerente Técnico Superior', company: 'PIRAMID ENERGY GOVERNANCE', phone: '+55 11 96112-9900', email: 'roberto.santos@piramidy.com', status: 'active' }
+  { id: 'c1', name: 'Roberto Santos de Araujo', role: 'Gerente Técnico Superior', company: 'PIRAMID ENERGY GOVERNANCE', phone: '+55 11 96112-9900', email: 'roberto.santos@piramidy.com', status: 'active' }
 ];
 
-export const INITIAL_CRM_ACTIVITIES: CrmActivity[] = [
-  { id: 'act-1', date: '2026-07-01T10:00:00Z', type: 'meeting', title: 'Reunião de Alinhamento PIT', description: 'Reunião realizada com Carlos (Cliente Demonstração S.A.) para revisão dos parâmetros do Plano de Inspeção e Testes (PIT). Tudo aprovado.', user: 'PIRAMID Admin' },
-  { id: 'act-2', date: '2026-07-02T14:30:00Z', type: 'email', title: 'Envio de Máscara de Relatórios', description: 'Enviado o e-mail contendo as máscaras oficiais de Inspeção de Líquido Penetrante para a equipe do cliente.', user: 'PIRAMID Admin' }
-];
+export const INITIAL_CRM_ACTIVITIES: CrmActivity[] = [];
 
-export const INITIAL_PROJECTS: Project[] = [
-  {
-    id: 'proj-demo-001',
-    name: 'Projeto de Inspeção Geral - Planta Piloto',
-    category: 'Inspeção e Qualidade',
-    client: 'Cliente Demonstração S.A.',
-    contract: 'CTR-DEMO-2026',
-    techResponsible: 'Carlos Santos (CREA RJ 999999)',
-    docNumber: 'DEMO-REP-QMS-001',
-    area: 'Área 01 - Vasos de Pressão e Tubulações de Gás',
-    title: 'Garantia de Qualidade e Rastreabilidade Criptográfica',
-    orderNumber: 'OS-202601',
-    revision: 'Rev. 0',
-    createdAt: '2026-07-01T08:00:00Z',
-    checklist: INITIAL_CHECKLIST_RAW.map((item, i) => {
-      let status = ChecklistStatus.PENDING;
-      let emissions: any[] = [];
-
-      if (i < 12) {
-        status = ChecklistStatus.APPROVED;
-        emissions = [{
-          id: `em-${item.code}-1`,
-          revision: 'Rev. 0',
-          fileName: `${item.code}_relatorio_concluido.pdf`,
-          fileSize: '4.2 MB',
-          uploadedAt: '2026-07-05T10:00:00Z',
-          status: ChecklistStatus.APPROVED,
-          signature: {
-            inspectorName: 'Carlos Santos',
-            professionalId: 'CREA RJ 999999',
-            nationalId: '***.000.000-**',
-            certificateAuthority: 'ICP-Brasil Piramid CA v1',
-            signedAt: '2026-07-05T10:14:00Z',
-            signatureHash: 'SHA256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
-            isValid: true
-          }
-        }];
-      } else if (i < 18) {
-        status = ChecklistStatus.ANALYSIS;
-        emissions = [{
-          id: `em-${item.code}-1`,
-          revision: 'Rev. A',
-          fileName: `${item.code}_rascunho_inspecao.doc`,
-          fileSize: '1.8 MB',
-          uploadedAt: '2026-07-06T11:45:00Z',
-          status: ChecklistStatus.ANALYSIS
-        }];
-      } else if (i === 22 || i === 23) {
-        status = ChecklistStatus.REJECTED;
-        emissions = [
-          {
-            id: `em-${item.code}-1`,
-            revision: 'Rev. 0',
-            fileName: `${item.code}_revisao_necessaria.pdf`,
-            fileSize: '2.5 MB',
-            uploadedAt: '2026-07-04T14:00:00Z',
-            status: ChecklistStatus.REJECTED
-          }
-        ];
-      } else if (i === 35 || i === 36) {
-        status = ChecklistStatus.NOT_APPLICABLE;
-      }
-
-      return {
-        ...item,
-        id: item.code,
-        category: item.category as 'CAPA' | 'CONTRA_CAPA' | 'SUMARIO',
-        status,
-        emissions
-      };
-    })
-  }
-];
+export const INITIAL_PROJECTS: Project[] = [];

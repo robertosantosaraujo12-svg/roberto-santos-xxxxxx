@@ -5,12 +5,13 @@ import {
   Activity, ArrowRight, ShieldCheck, Key, Lock, FileText, Users, Landmark,
   Database, Cpu, Network, RefreshCw, Link, Settings, AlertTriangle, Play, Check, HelpCircle, Share2, Eye, Trash2, Code, Plus, ArrowUpRight, Clock
 } from 'lucide-react';
-import { Language, Company, Invoice } from '../types';
+import { Language, Company, Invoice, Project, ChecklistStatus } from '../types';
 
 interface SaaSExpansionHubViewProps {
   language: Language;
   isAdmin?: boolean;
   companies?: Company[];
+  projects?: Project[];
   invoices?: Invoice[];
   onToggleManualBlock?: (companyId: string) => void;
   onUpdateInvoiceStatus?: (invoiceId: string, status: 'PAID' | 'PENDING') => void;
@@ -21,6 +22,7 @@ export default function SaaSExpansionHubView({
   language, 
   isAdmin = false,
   companies = [],
+  projects = [],
   invoices = [],
   onToggleManualBlock = () => {},
   onUpdateInvoiceStatus = () => {},
@@ -1139,6 +1141,84 @@ Roberto Santos de Araujo`;
               </div>
             </div>
           </div>
+
+          {/* Real Companies Billing Counter Section */}
+          <div className="bg-[#0b0f19] border border-orange-500/20 rounded-xl p-5 sm:p-6 space-y-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-gray-800 pb-3">
+              <div>
+                <h4 className="text-sm font-bold font-mono text-white uppercase tracking-wider flex items-center gap-2">
+                  <Landmark className="w-4 h-4 text-orange-500" />
+                  <span>Contador Financeiro Real por Empresa Cadastrada</span>
+                </h4>
+                <p className="text-xs text-gray-400 font-sans mt-0.5">
+                  Medição baseada nas empresas reais cadastradas no sistema, somando licença + OSs ativas + itens aprovados no Databook + impostos.
+                </p>
+              </div>
+
+              <span className="text-[10px] font-mono bg-orange-500/10 text-orange-400 border border-orange-500/20 px-2 py-1 rounded">
+                (Base + OSs + Itens Aprovados Databook) + Impostos NF
+              </span>
+            </div>
+
+            {companies.filter(c => c.id !== 'master').length === 0 ? (
+              <div className="p-8 text-center bg-gray-950/40 rounded-lg border border-gray-900 text-xs text-gray-500 font-mono space-y-2">
+                <Users className="w-8 h-8 text-gray-700 mx-auto" />
+                <p>Nenhuma empresa de cliente cadastrada no sistema até o momento.</p>
+                <p className="text-[10px] text-gray-600">Ao cadastrar novas empresas na tela inicial (login), cada uma aparecerá com seus valores dinâmicos aqui.</p>
+              </div>
+            ) : (
+              <div className="overflow-x-auto border border-gray-900 rounded-lg">
+                <table className="w-full text-left font-mono text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-gray-950 text-gray-400 text-[10px] uppercase border-b border-gray-800">
+                      <th className="p-3">Empresa Cadastrada</th>
+                      <th className="p-3 text-center">OSs Cadastradas</th>
+                      <th className="p-3 text-center">Itens Aprovados Databook</th>
+                      <th className="p-3 text-right">Subtotal Serviços</th>
+                      <th className="p-3 text-right">Impostos NF (5%)</th>
+                      <th className="p-3 text-right">Valor Total a Pagar</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-900 text-gray-200">
+                    {companies.filter(c => c.id !== 'master').map((comp) => {
+                      const compProjects = (projects || []).filter(p =>
+                        p.client.toLowerCase().includes(comp.name.toLowerCase()) ||
+                        comp.name.toLowerCase().includes(p.client.toLowerCase())
+                      );
+                      const osCount = compProjects.length;
+                      let approvedItems = 0;
+                      compProjects.forEach(p => {
+                        p.checklist.forEach(item => {
+                          if (item.status === ChecklistStatus.APPROVED) approvedItems++;
+                        });
+                      });
+                      const itemsVal = approvedItems * feePerItem;
+                      const osVal = osCount * feePerOS;
+                      const subtotal = baseFee + osVal + itemsVal;
+                      const taxes = subtotal * 0.05;
+                      const totalToPay = subtotal + taxes;
+
+                      return (
+                        <tr key={comp.id} className="hover:bg-gray-900/30 transition">
+                          <td className="p-3 font-sans font-bold text-white flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-orange-500" />
+                            <span>{comp.name}</span>
+                          </td>
+                          <td className="p-3 text-center text-orange-400 font-bold">{osCount} OS</td>
+                          <td className="p-3 text-center text-teal-400 font-bold">{approvedItems} docs</td>
+                          <td className="p-3 text-right text-gray-300">R$ {subtotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
+                          <td className="p-3 text-right text-orange-400">R$ {taxes.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
+                          <td className="p-3 text-right text-emerald-400 font-bold text-sm">
+                            R$ {totalToPay.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
@@ -1233,9 +1313,13 @@ Roberto Santos de Araujo`;
                     onChange={(e) => setSelectedNdaClient(e.target.value)}
                     className="mt-1 w-full bg-gray-900 border border-gray-800 text-gray-200 p-2 rounded focus:outline-none cursor-pointer"
                   >
-                    <option value="Cliente Demonstração S.A.">Cliente Demonstração S.A.</option>
-                    <option value="Empresa Contratante S.A.">Empresa Contratante S.A.</option>
-                    <option value="Parceiro Técnico S.A.">Parceiro Técnico S.A.</option>
+                    {companies.filter(c => c.id !== 'master').length > 0 ? (
+                      companies.filter(c => c.id !== 'master').map(c => (
+                        <option key={c.id} value={c.name}>{c.name}</option>
+                      ))
+                    ) : (
+                      <option value="Empresa Cadastrada S.A.">Empresa Cadastrada S.A.</option>
+                    )}
                   </select>
                 </div>
 
@@ -1532,8 +1616,13 @@ Roberto Santos de Araujo`;
                     onChange={(e) => setSelectedClientForInvoice(e.target.value)}
                     className="mt-1 w-full bg-gray-900 border border-gray-800 text-gray-200 p-2 rounded focus:outline-none cursor-pointer"
                   >
-                    <option value="Subsea7 S.A.">Subsea7 S.A. (CNPJ: 44.102.930/0001-55)</option>
-                    <option value="Chevron Corp">Chevron Corp (CNPJ: 10.293.848/0001-22)</option>
+                    {companies.filter(c => c.id !== 'master').length > 0 ? (
+                      companies.filter(c => c.id !== 'master').map(c => (
+                        <option key={c.id} value={c.name}>{c.name} (CNPJ: {c.cnpj})</option>
+                      ))
+                    ) : (
+                      <option value="Empresa Cadastrada S.A.">Empresa Cadastrada S.A.</option>
+                    )}
                   </select>
                 </div>
 

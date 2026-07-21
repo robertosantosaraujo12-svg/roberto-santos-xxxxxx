@@ -42,7 +42,8 @@ export async function loadCompanies(initialData: Company[]): Promise<Company[]> 
   // LocalStorage Fallback
   const cached = localStorage.getItem(KEYS.COMPANIES);
   if (cached) {
-    return JSON.parse(cached);
+    const list: Company[] = JSON.parse(cached);
+    return list.filter(c => c.id !== 'cliente-demo');
   } else {
     localStorage.setItem(KEYS.COMPANIES, JSON.stringify(initialData));
     return initialData;
@@ -116,7 +117,8 @@ export async function loadProjects(initialData: Project[]): Promise<Project[]> {
 
   const cached = localStorage.getItem(KEYS.PROJECTS);
   if (cached) {
-    return JSON.parse(cached);
+    const list: Project[] = JSON.parse(cached);
+    return list.filter(p => p.id !== 'proj-demo-001' && !p.client.includes('Demonstração'));
   } else {
     localStorage.setItem(KEYS.PROJECTS, JSON.stringify(initialData));
     return initialData;

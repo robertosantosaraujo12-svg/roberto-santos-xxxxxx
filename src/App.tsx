@@ -65,40 +65,11 @@ export default function App() {
 
         const cachedInvoices = localStorage.getItem('piramidy_invoices');
         if (cachedInvoices) {
-          setInvoices(JSON.parse(cachedInvoices));
+          const invList: Invoice[] = JSON.parse(cachedInvoices);
+          setInvoices(invList.filter(inv => inv.companyId !== 'cliente-demo'));
         } else {
-          const initialInvoices: Invoice[] = [
-            {
-              id: 'FAT-2026-001',
-              companyId: 'cliente-demo',
-              companyName: 'Cliente Demonstração S.A.',
-              amount: 4500.00,
-              dueDate: '2026-06-25', // Overdue relative to 2026-07-13 (> 10 days)
-              status: 'PENDING',
-              emailAlertsSent: 0
-            },
-            {
-              id: 'FAT-2026-002',
-              companyId: 'cliente-demo',
-              companyName: 'Cliente Demonstração S.A.',
-              amount: 3800.00,
-              dueDate: '2026-07-25', // Future due date
-              status: 'PENDING',
-              emailAlertsSent: 0
-            },
-            {
-              id: 'FAT-2026-003',
-              companyId: 'cliente-demo',
-              companyName: 'Cliente Demonstração S.A.',
-              amount: 4500.00,
-              dueDate: '2026-05-25',
-              status: 'PAID',
-              emailAlertsSent: 1,
-              lastAlertSentAt: '2026-05-20T14:30:00Z'
-            }
-          ];
-          setInvoices(initialInvoices);
-          localStorage.setItem('piramidy_invoices', JSON.stringify(initialInvoices));
+          setInvoices([]);
+          localStorage.setItem('piramidy_invoices', JSON.stringify([]));
         }
       } catch (error) {
         console.error('Failed to load initial data:', error);
@@ -639,6 +610,7 @@ export default function App() {
             language={language}
             isAdmin={currentUser?.isAdmin === true}
             companies={companies}
+            projects={projects}
             invoices={invoices}
             onToggleManualBlock={handleToggleManualBlock}
             onUpdateInvoiceStatus={handleUpdateInvoiceStatus}
